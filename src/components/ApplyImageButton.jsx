@@ -17,7 +17,7 @@ const ApplyImageButton = () => {
         zIndex: 1 
     }
     return (
-        <button style = {buttonstyle}>
+        <button className = {buttonstyle}>
             Apply Now
         </button>
     )
