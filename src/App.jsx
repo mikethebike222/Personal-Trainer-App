@@ -1,15 +1,16 @@
 import Header from './components/Header'
 import Discipline  from './components/Discipline'
 import ApplyImage from './components/ApplyImage'
-import ApplyImageButton from './components/ApplyImageButton'
+import ClientWins from './components/ClientWins'
 
 const App = () => {
 
 	return (
-    <div>
+    <div style={{ margin: 0, padding: 0 }}>
       <Header/>
       <Discipline/>
       <ApplyImage/>
+      <ClientWins/>
     </div>
 	)
 }
