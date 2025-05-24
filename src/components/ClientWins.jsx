@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styles from './Client.module.css'
 
 // Gets all the pngs within the clients directory 
 const clients = import.meta.glob('../images/clients/*.png', { eager: true })
@@ -18,10 +19,13 @@ const ClientWins = () => {
     const next = () => setIdx(i => (i + 1) % clientImages.length)
 
     return (
-        <div>
-          <button onClick={prev}>‹</button>
-          <img src={clientImages[idx]} alt={`Client ${idx+1}`} />
-          <button onClick={next}>›</button>
+        <div className = {styles.clientcontainer}>
+          <h3 className = {styles.clienttext}>Client Wins</h3>
+          <div className = {styles.clientimagebutton}>
+            <button className = {styles.leftbutton} onClick={prev}>‹</button>
+            <img className = {styles.clientimage} src = {clientImages[idx]} alt={`Client ${idx+1}`} />
+            <button className = {styles.rightbutton} onClick={next}>›</button>
+          </div>
         </div>
       )
 

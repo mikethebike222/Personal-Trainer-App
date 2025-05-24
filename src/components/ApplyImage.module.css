@@ -1,14 +1,15 @@
 .image {
     display: block;
     margin: 0 auto;
+    padding-bottom: 3%;
 }
 
-.container{
+.container {
   position: relative;
   width: 100%;
 }
 
-.buttonstyle{
+.buttonstyle {
   position: absolute;    
   top: -3.6%;             
   left: 50%;             
