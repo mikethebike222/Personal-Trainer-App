@@ -11,6 +11,7 @@
   .inspireText {
     flex: 1 1 0;
     max-width: 650px;
+    padding-right: 3%;
   }
   
   .inspireHead {
@@ -37,16 +38,14 @@
 
   @media (max-width: 900px) {
     .inspireContainer {
-      flex-direction: column;
       align-items: flex-start;
       gap: 1.5rem;
     }
     .inspireImg {
-      max-width: 80vw;
-      margin: 0 auto;
+      max-width: 50%;
     }
     .inspireText {
-      max-width: 100%;
+      max-width: 70%;
     }
   }
   

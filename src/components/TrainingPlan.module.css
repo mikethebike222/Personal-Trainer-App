@@ -1,0 +1,22 @@
+.trainingPlanContainer {
+    background-color: #eeeee4;
+
+}
+
+.trainingPlanHead {
+    color: black;
+    font-size: clamp(23px, 4vw, 35px);
+    padding-top: 3%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    width: 100%;
+}
+
+.trainingPlanText{
+    max-width: 650px;
+    margin: 0 auto;        
+    padding: 0 1rem;        
+    text-align: left;
+    font-size: clamp(15px, 3vw, 25px);
+}
