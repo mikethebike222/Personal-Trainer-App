@@ -6,6 +6,8 @@ const Header = () => {
         padding: '5px',
         textAlign: 'center',
         textTransform: 'uppercase',
+        margin: '0',
+        width: '100%',
       }
 
     return (
