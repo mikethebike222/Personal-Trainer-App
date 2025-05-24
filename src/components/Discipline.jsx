@@ -3,7 +3,7 @@ const Discipline = () => {
 
     const disciplineStyle = {
         color: 'Black',
-        fontSize: '55px',
+        fontSize: 'clamp(28px, 6vw, 55px)',
         padding: '5px',
         textAlign: 'center',
         textTransform: 'uppercase',
