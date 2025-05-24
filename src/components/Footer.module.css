@@ -1,0 +1,26 @@
+.footHeader {
+    color: black;
+    font-size: clamp(23px, 4vw, 35px);
+    padding-top: 1%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    width: 100%;
+}
+
+.contact {
+    max-width: 650px;
+    margin: 0 auto;        
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: .6%;
+    font-size: clamp(15px, 3vw, 25px);
+}
+
+.textFormat {
+    padding-top: .5%;
+    padding-bottom: .6%;
+    margin: 0 auto;        
+    text-align: center;
+    font-size: clamp(10px, 2vw, 18px);
+}

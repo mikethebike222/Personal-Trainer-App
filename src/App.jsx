@@ -4,6 +4,7 @@ import ApplyImage from './components/ApplyImage'
 import ClientWins from './components/ClientWins'
 import SellingPoint from './components/SellingPoint'
 import TrainingPlan from './components/TrainingPlan'
+import Footer from './components/Footer'
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
       <ClientWins/>
       <SellingPoint/>
       <TrainingPlan/>
+      <Footer/>
     </div>
 	)
 }
