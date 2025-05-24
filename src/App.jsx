@@ -3,6 +3,7 @@ import Discipline  from './components/Discipline'
 import ApplyImage from './components/ApplyImage'
 import ClientWins from './components/ClientWins'
 import SellingPoint from './components/SellingPoint'
+import TrainingPlan from './components/TrainingPlan'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
       <ApplyImage/>
       <ClientWins/>
       <SellingPoint/>
+      <TrainingPlan/>
     </div>
 	)
 }
