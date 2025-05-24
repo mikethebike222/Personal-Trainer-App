@@ -1,0 +1,52 @@
+.inspireContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2.5rem;
+    padding: 3rem 1rem;
+  }
+  
+  .inspireText {
+    flex: 1 1 0;
+    max-width: 650px;
+  }
+  
+  .inspireHead {
+    color: black;
+    font-size: clamp(28px, 6vw, 54px);
+    text-transform: uppercase;
+    margin: 0 0 2rem 0;
+    font-weight: bolder;
+    text-align: left;
+    line-height: 1.15;
+  }
+  
+  .inspireSub {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.5;
+  }
+  
+  .inspireImg {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .inspireContainer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .inspireImg {
+      max-width: 80vw;
+      margin: 0 auto;
+    }
+    .inspireText {
+      max-width: 100%;
+    }
+  }
+  

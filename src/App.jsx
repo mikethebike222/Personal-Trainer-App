@@ -2,6 +2,7 @@ import Header from './components/Header'
 import Discipline  from './components/Discipline'
 import ApplyImage from './components/ApplyImage'
 import ClientWins from './components/ClientWins'
+import SellingPoint from './components/SellingPoint'
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
       <Discipline/>
       <ApplyImage/>
       <ClientWins/>
+      <SellingPoint/>
     </div>
 	)
 }

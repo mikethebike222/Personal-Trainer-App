@@ -6,7 +6,6 @@
     text-transform: uppercase;
     margin: 0;
     width: 100%;
-    
 
 }
 
@@ -20,7 +19,7 @@
 }
 
 .clientcontainer {
-    background-color: lightgrey;
+    background-color: #eeeee4;
 }
 
 .leftbutton { 
