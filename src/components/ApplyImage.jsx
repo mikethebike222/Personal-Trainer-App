@@ -1,14 +1,12 @@
 import gymInterior from '../images/gym-interior.jpg';
 import ApplyImageButton from './ApplyImageButton';
+import styles from './ApplyImage.module.css'
 
 const ApplyImage = () => {
-    const imagestyle = {
-        display: 'block',
-        margin: '0 auto',
-    }
+
     return(
         <div>
-            <img style = {imagestyle} src={gymInterior} height = "675" width = "1250" alt="gyminterior"/>
+            <img className = {styles.image} src={gymInterior} height = "675" width = "1250" alt="gyminterior"/>
             <ApplyImageButton/>
         </div>
     )
