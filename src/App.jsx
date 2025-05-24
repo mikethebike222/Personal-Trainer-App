@@ -10,7 +10,6 @@ const App = () => {
       <Header/>
       <Discipline/>
       <ApplyImage/>
-      <ApplyImageButton/>
     </div>
 	)
 }
