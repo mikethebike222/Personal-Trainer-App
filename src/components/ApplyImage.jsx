@@ -1,5 +1,4 @@
 import gymInterior from '../images/gym-interior.jpg';
-import ApplyImageButton from './ApplyImageButton';
 import styles from './ApplyImage.module.css'
 
 const ApplyImage = () => {
