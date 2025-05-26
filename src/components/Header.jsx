@@ -3,7 +3,7 @@ const Header = () => {
         color: 'lightgray',
         background: 'black',
         fontSize: 'clamp(28px, 6vw, 30px)',
-        padding: '5px',
+        padding: '0.55%',
         textAlign: 'center',
         textTransform: 'uppercase',
         margin: '0',

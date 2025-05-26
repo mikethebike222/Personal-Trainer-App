@@ -1,0 +1,15 @@
+.backbuttonstyle{
+    position: absolute;    
+    top:0%;
+    left: 5%;             
+    transform: translateX(-50%);
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 4vw, 2rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+    border-radius: 9999px;
+    background-color: lightgray;
+    color: black;   
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+}

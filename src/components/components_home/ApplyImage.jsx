@@ -1,4 +1,3 @@
-import gymInterior from '../images/gym-interior.jpg';
 import gymInterior from '../../images/gym-interior.jpg';
 import styles from './ApplyImage.module.css'
 import { useNavigate } from 'react-router-dom'
