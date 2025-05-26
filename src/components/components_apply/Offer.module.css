@@ -1,0 +1,20 @@
+.offerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2.5rem;
+    padding: 3rem 1rem;
+}
+
+.offerH2{
+    padding-right: 15%;
+    font-size: clamp(28px, 6vw, 54px);
+    font-weight: bolder;
+}
+
+.offerUl{
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.5;
+}
