@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const Back = () => {
     const navigate = useNavigate()
     return (
-        <div>
+        <div className = {styles.buttonContainer}>
             <button onClick={() => navigate('/')} className = {styles.backbuttonstyle}>
             Home
             </button>
