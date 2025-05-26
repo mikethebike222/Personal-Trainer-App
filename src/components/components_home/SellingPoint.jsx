@@ -1,4 +1,4 @@
-import inspirePic from '../images/inspire.jpg';
+import inspirePic from '../../images/inspire.jpg';
 import styles from './SellingPoint.module.css'
 
 
