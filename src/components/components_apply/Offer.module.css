@@ -5,6 +5,7 @@
     background-color: #F3F4F5;
     margin: 0 auto;
     gap: 2.5rem;
+    padding-top: 5%;
 }
 
 .offerH2{
@@ -14,7 +15,7 @@
 }
 
 .offerUl{
-    padding-left: 20%;
-    font-size: clamp(16px, 2vw, 22px);
+    padding-left: 5%;
+    font-size: clamp(20px, 3vw, 25px);
     line-height: 1.5;
 }

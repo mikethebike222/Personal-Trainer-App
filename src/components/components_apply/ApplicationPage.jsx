@@ -3,6 +3,7 @@ import Footer from '../Footer'
 import Offer from './Offer'
 import Back from './Back'
 import Swoosh from './Swoosh'
+import Form from './Form'
 
 const ApplicationPage = () => {
 
@@ -12,6 +13,7 @@ const ApplicationPage = () => {
       <Back/>
       <Offer/>
       <Swoosh/>
+      <Form/>
       <Footer/>
     </div>
 	)
