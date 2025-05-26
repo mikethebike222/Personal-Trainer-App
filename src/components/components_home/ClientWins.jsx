@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './Client.module.css'
 
 // Gets all the pngs within the clients directory 
-const clients = import.meta.glob('../images/clients/*.png', { eager: true })
+const clients = import.meta.glob('../../images/clients/*.png', { eager: true })
 const clientImages = Object
   .entries(clients)
   .sort(([pathA], [pathB]) => pathA.localeCompare(pathB))

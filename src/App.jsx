@@ -1,24 +1,15 @@
-import Header from './components/Header'
-import Discipline  from './components/Discipline'
-import ApplyImage from './components/ApplyImage'
-import ClientWins from './components/ClientWins'
-import SellingPoint from './components/SellingPoint'
-import TrainingPlan from './components/TrainingPlan'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/components_home/Home'
+import ApplicationPage from './components/components_apply/ApplicationPage'
+
 
 const App = () => {
 
 	return (
-    <div style={{ margin: 0, padding: 0 }}>
-      <Header/>
-      <Discipline/>
-      <ApplyImage/>
-      <ClientWins/>
-      <SellingPoint/>
-      <TrainingPlan/>
-      <Footer/>
-    </div>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/application" element={<ApplicationPage/>} />
+        </Routes>
 	)
 }
-
 export default App
