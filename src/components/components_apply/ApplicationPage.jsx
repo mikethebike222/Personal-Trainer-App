@@ -2,6 +2,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import Offer from './Offer'
 import Back from './Back'
+import Swoosh from './Swoosh'
 
 const ApplicationPage = () => {
 
@@ -10,6 +11,7 @@ const ApplicationPage = () => {
       <Header/>
       <Back/>
       <Offer/>
+      <Swoosh/>
       <Footer/>
     </div>
 	)

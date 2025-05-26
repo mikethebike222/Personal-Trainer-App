@@ -1,10 +1,10 @@
 .backbuttonstyle{
     position: absolute;    
-    top:0%;
+    top:.5%;
     left: 5%;             
     transform: translateX(-50%);
-    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 4vw, 2rem);
-    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+    padding: clamp(0.4rem, 1.5vw, 0.55rem) clamp(.8rem, 3.5vw, 1.6rem);
+    font-size: clamp(0.8rem, 2.3vw, 1.1rem);
     border-radius: 9999px;
     background-color: lightgray;
     color: black;   
@@ -13,3 +13,40 @@
     cursor: pointer;
     z-index: 1;
 }
+
+
+
+@media (max-width: 1024px) and (min-width: 700px) {
+    .buttonContainer {
+        position: relative;
+    }
+    .backbuttonstyle {
+        position: absolute;
+        top: 4.85%;
+        left: 47.5%;
+        transform: translateX(-50%);
+        background-color: lightgray;
+        color: black;   
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+  }
+  @media (max-width: 700px) {
+    .buttonContainer {
+        position: relative;
+    }
+    .backbuttonstyle {
+        position: absolute;
+        top: 5.5%;
+        left: 47.5%;
+        transform: translateX(-50%);
+        background-color: lightgray;
+        color: black;   
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1;
+    }
+  }

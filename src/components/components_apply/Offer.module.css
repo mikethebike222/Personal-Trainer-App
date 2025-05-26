@@ -2,19 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
+    background-color: #F3F4F5;
     margin: 0 auto;
     gap: 2.5rem;
-    padding: 3rem 1rem;
 }
 
 .offerH2{
-    padding-right: 15%;
-    font-size: clamp(28px, 6vw, 54px);
+    padding-left: 7%;
+    font-size: clamp(31px, 6.5vw, 60px);
     font-weight: bolder;
 }
 
 .offerUl{
+    padding-left: 20%;
     font-size: clamp(16px, 2vw, 22px);
     line-height: 1.5;
 }
