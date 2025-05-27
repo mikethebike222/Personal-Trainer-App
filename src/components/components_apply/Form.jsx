@@ -103,7 +103,7 @@ const Form = () => {
             <form onSubmit={handleSubmit}>
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
-                <label htmlFor='firstname'>First Name*</label>
+                <label htmlFor='firstname'>First Name (required)</label>
                 <input type='text' value={formData.fname} name='fname' onChange={handleChange}/>
                 {errors.fname && (
                     <span className={styles.errorMessage}>
@@ -112,7 +112,7 @@ const Form = () => {
                 )}
                 </div>
                 <div className= {styles.formGroup}>
-                <label htmlFor='lastname'>Last Name*</label>
+                <label htmlFor='lastname'>Last Name (required)</label>
                 <input type='text' value={formData.lname} onChange={handleChange} name='lname'/>
                 {errors.lname && (
                     <span className={styles.errorMessage}>
@@ -124,7 +124,7 @@ const Form = () => {
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
-                <label htmlFor='email'>Email*</label>
+                <label htmlFor='email'>Email (required)</label>
                 <input type='text' value={formData.email} onChange={handleChange} name='email'/>
                 {errors.email && (
                     <span className={styles.errorMessage}>
@@ -134,7 +134,7 @@ const Form = () => {
                 </div>
 
                 <div className= {styles.formGroup}>
-                <label htmlFor='phone'>Phone #*</label>
+                <label htmlFor='phone'>Phone # (required)</label>
                 <input type='text' value={formData.phone} onChange={handleChange} name='phone'/>
                 {errors.phone && (
                     <span className={styles.errorMessage}>
@@ -146,7 +146,7 @@ const Form = () => {
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
-                <label htmlFor='age'>Age*</label>
+                <label htmlFor='age'>Age (required)</label>
                 <input type='text' value={formData.age} onChange={handleChange} name='age'/>
                 {errors.age && (
                     <span className={styles.errorMessage}>
@@ -156,7 +156,7 @@ const Form = () => {
                 </div>
 
                 <div className= {styles.formGroup}>
-                <label htmlFor='height'>Height (In feet and inches)*</label>
+                <label htmlFor='height'>Height, feet and inches (e.g. 5'7) (required)</label>
                 <input type='text' value={formData.height} onChange={handleChange} name='height'/>
                 {errors.height && (
                     <span className={styles.errorMessage}>
@@ -168,7 +168,7 @@ const Form = () => {
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
-                <label htmlFor='weight'>Weight (In pounds)*</label>
+                <label htmlFor='weight'>Weight in pounds (required)</label>
                 <input type='text' value={formData.weight} onChange={handleChange} name='weight'/>
                 {errors.weight && (
                     <span className={styles.errorMessage}>
@@ -178,7 +178,7 @@ const Form = () => {
                 </div>
 
                 <div className= {styles.formGroup}>
-                <label htmlFor='commit'>Are you in a position to commit to a financial investment for at least 8 weeks into this training?*</label>
+                <label htmlFor='commit'>Are you in a position to commit to a financial investment for at least 8 weeks into this training? (required)</label>
                 <select name='commit' id='commit' value={formData.commit} onChange={handleChange}>
                     <option value='Yes'>Yes</option>
                     <option value='No'>No</option>
@@ -186,7 +186,7 @@ const Form = () => {
                 </div>
                 </div>
                 <div className= {styles.formGroup}>
-                <label htmlFor='goalWeight'>Do you have a goal weight in mind, if so what is it?*</label>
+                <label htmlFor='goalWeight'>Do you have a goal weight in mind, if so what is it? (required)</label>
                 <input type='text' value={formData.goal} onChange={handleChange} name='goal'/>
                 {errors.goal && (
                     <span className={styles.errorMessage}>
@@ -219,7 +219,7 @@ The guidance provided by Jacob Oestreicher Coaching is for educational purposes 
 
 By signing here with Jacob Oestreicher Coaching, clients confirm they have read, understood, and agreed to the terms outlined in this policy.</p>
 
-                <label htmlFor='signature'>Signature*</label>
+                <label htmlFor='signature'>Signature (required)</label>
                 <input type='text' name='signature' value={formData.signature} onChange={handleChange}/>
                 {errors.signature && (
                     <span className={styles.errorMessage}>
