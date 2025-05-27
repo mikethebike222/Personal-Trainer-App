@@ -1,0 +1,97 @@
+form{
+    padding-bottom: 10%;
+}
+
+.formRow {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+.formGroup {
+    flex: 1;
+    min-width: 250px;
+}
+
+.formContainer{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width:70%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+h1{
+    font-size: clamp(28px, 6vw, 55px);
+}
+
+label {
+    font-size: clamp(15px, 3vw, 17px);
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: clamp(15px, 3vw, 14px);;
+}
+
+select{
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    max-width: 400px;
+    min-width: 200px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea{
+    resize: none;
+    width: 98%;
+    min-height: 100px;
+    max-height: 150px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formButton{
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: grey;
+    width: 40%;
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: #555;
+}
+
+  
+  
