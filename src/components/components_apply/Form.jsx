@@ -48,7 +48,7 @@ const Form = () => {
         } 
 
         if (data.lname.trim() === '') {
-            errors.fname = 'Last Name is required';
+            errors.lname = 'Last Name is required';
         } 
 
 
@@ -66,7 +66,7 @@ const Form = () => {
 
         if (!data.age) {
             errors.age = 'Age is required';
-        } else if (Number(data.age) <= 5 || Number(str) >= 100 || !/^\d+$/.test(input)) {
+        } else if (Number(data.age) <= 5 || Number(data.age) >= 100 || !/^\d+$/.test(data.age)) {
             errors.age = 'Please enter a valid age'
         }
 
@@ -78,12 +78,12 @@ const Form = () => {
 
         if (!data.weight){
             errors.weight = 'Weight is required'
-        } else if (!/^\d{2,3}$/.test(data.phone) ){
+        } else if (!/^\d{2,3}$/.test(data.weight) ){
             errors.weight = "Please enter a valid rounded weight like 123 for 123.3lbs"
         }
 
         if (!data.goal) {
-            errors.weight = "Goal Weight is required"
+            errors.goal = "Goal Weight is required"
         } 
 
         const formatName = (name) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
@@ -100,15 +100,25 @@ const Form = () => {
     return(
         <div className = {styles.formContainer}>
             <h1>LET'S DO THIS.</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='firstname'>First Name*</label>
                 <input type='text' value={formData.fname} name='fname' onChange={handleChange}/>
+                {errors.fname && (
+                    <span className={styles.errorMessage}>
+                        {errors.fname}
+                    </span>
+                )}
                 </div>
                 <div className= {styles.formGroup}>
                 <label htmlFor='lastname'>Last Name*</label>
                 <input type='text' value={formData.lname} onChange={handleChange} name='lname'/>
+                {errors.lname && (
+                    <span className={styles.errorMessage}>
+                        {errors.lname}
+                    </span>
+                )}
                 </div>
                 </div>
 
@@ -116,11 +126,21 @@ const Form = () => {
                 <div className= {styles.formGroup}>
                 <label htmlFor='email'>Email*</label>
                 <input type='text' value={formData.email} onChange={handleChange} name='email'/>
+                {errors.email && (
+                    <span className={styles.errorMessage}>
+                        {errors.email}
+                    </span>
+                )}
                 </div>
 
                 <div className= {styles.formGroup}>
                 <label htmlFor='phone'>Phone #*</label>
                 <input type='text' value={formData.phone} onChange={handleChange} name='phone'/>
+                {errors.phone && (
+                    <span className={styles.errorMessage}>
+                        {errors.phone}
+                    </span>
+                )}
                 </div>
                 </div>
 
@@ -128,11 +148,21 @@ const Form = () => {
                 <div className= {styles.formGroup}>
                 <label htmlFor='age'>Age*</label>
                 <input type='text' value={formData.age} onChange={handleChange} name='age'/>
+                {errors.age && (
+                    <span className={styles.errorMessage}>
+                        {errors.age}
+                    </span>
+                )}
                 </div>
 
                 <div className= {styles.formGroup}>
                 <label htmlFor='height'>Height (In feet and inches)*</label>
                 <input type='text' value={formData.height} onChange={handleChange} name='height'/>
+                {errors.height && (
+                    <span className={styles.errorMessage}>
+                        {errors.height}
+                    </span>
+                )}
                 </div>
                 </div>
 
@@ -140,6 +170,11 @@ const Form = () => {
                 <div className= {styles.formGroup}>
                 <label htmlFor='weight'>Weight (In pounds)*</label>
                 <input type='text' value={formData.weight} onChange={handleChange} name='weight'/>
+                {errors.weight && (
+                    <span className={styles.errorMessage}>
+                        {errors.weight}
+                    </span>
+                )}
                 </div>
 
                 <div className= {styles.formGroup}>
@@ -153,6 +188,11 @@ const Form = () => {
                 <div className= {styles.formGroup}>
                 <label htmlFor='goalWeight'>Do you have a goal weight in mind, if so what is it?*</label>
                 <input type='text' value={formData.goal} onChange={handleChange} name='goal'/>
+                {errors.goal && (
+                    <span className={styles.errorMessage}>
+                        {errors.goal}
+                    </span>
+                )}
                 </div>
 
                 <label htmlFor='stuck'>Where are you getting stuck right now on your own, and why are you looking to be coached?</label>
@@ -180,9 +220,15 @@ The guidance provided by Jacob Oestreicher Coaching is for educational purposes 
 By signing here with Jacob Oestreicher Coaching, clients confirm they have read, understood, and agreed to the terms outlined in this policy.</p>
 
                 <label htmlFor='signature'>Signature*</label>
-                <input type='text' placeholder='Enter Signature' name='signature' value={formData.signature} onChange={handleChange}/>
+                <input type='text' name='signature' value={formData.signature} onChange={handleChange}/>
+                {errors.signature && (
+                    <span className={styles.errorMessage}>
+                        <div className= {styles.errorSignature}>
+                        {errors.signature}
+                        </div>
+                    </span>
+                )}
             
-                <button className = {styles.formButton} type='reset'>Reset</button>
                 <button className = {styles.formButton} type='submit'>Submit</button>
 
             </form>
