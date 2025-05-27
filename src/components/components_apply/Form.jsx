@@ -13,7 +13,7 @@ const Form = () => {
         commit: 'Yes',
         goal: '',
         stuck: '',
-        date: 'Immediately',
+        start: 'Immediately',
         signature: '',
     })
 
@@ -79,10 +79,20 @@ const Form = () => {
         if (!data.weight){
             errors.weight = 'Weight is required'
         } else if (!/^\d{2,3}$/.test(data.phone) ){
-            errors.weight = "Please enter a valid rounded weight like 123 for 123.5lbs"
+            errors.weight = "Please enter a valid rounded weight like 123 for 123.3lbs"
         }
 
-        
+        if (!data.goal) {
+            errors.weight = "Goal Weight is required"
+        } 
+
+        const formatName = (name) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+        const expectedSignature = `${formatName(data.fname)} ${formatName(data.lname)}`
+
+        if (data.signature !== expectedSignature) {
+            errors.signature = "Invalid signature, should be your legal first and last name"
+          }
+
         return errors;
     };
 
@@ -94,62 +104,62 @@ const Form = () => {
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='firstname'>First Name*</label>
-                <input type='text' placeholder='Enter First Name' name='firstName'/>
+                <input type='text' value={formData.fname} name='fname' onChange={handleChange}/>
                 </div>
                 <div className= {styles.formGroup}>
                 <label htmlFor='lastname'>Last Name*</label>
-                <input type='text' placeholder='Enter Last Name'name='lastName'/>
+                <input type='text' value={formData.lname} onChange={handleChange} name='lname'/>
                 </div>
                 </div>
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='email'>Email*</label>
-                <input type='text' placeholder='Enter Email'name='email'/>
+                <input type='text' value={formData.email} onChange={handleChange} name='email'/>
                 </div>
 
                 <div className= {styles.formGroup}>
                 <label htmlFor='phone'>Phone #*</label>
-                <input type='text' placeholder='Enter Phone #'name='phone'/>
+                <input type='text' value={formData.phone} onChange={handleChange} name='phone'/>
                 </div>
                 </div>
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='age'>Age*</label>
-                <input type='text' placeholder='Enter Height'name='age'/>
+                <input type='text' value={formData.age} onChange={handleChange} name='age'/>
                 </div>
 
                 <div className= {styles.formGroup}>
                 <label htmlFor='height'>Height (In feet and inches)*</label>
-                <input type='text' placeholder='Enter Height'name='height'/>
+                <input type='text' value={formData.height} onChange={handleChange} name='height'/>
                 </div>
                 </div>
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='weight'>Weight (In pounds)*</label>
-                <input type='text' placeholder='Enter Weight'name='weight'/>
+                <input type='text' value={formData.weight} onChange={handleChange} name='weight'/>
                 </div>
 
                 <div className= {styles.formGroup}>
                 <label htmlFor='commit'>Are you in a position to commit to a financial investment for at least 8 weeks into this training?*</label>
-                <select name='commit' id='commit'>
-                    <option value='yes'>Yes</option>
-                    <option value='no'>No</option>
+                <select name='commit' id='commit' value={formData.commit} onChange={handleChange}>
+                    <option value='Yes'>Yes</option>
+                    <option value='No'>No</option>
                 </select>
                 </div>
                 </div>
                 <div className= {styles.formGroup}>
                 <label htmlFor='goalWeight'>Do you have a goal weight in mind, if so what is it?*</label>
-                <input type='text' placeholder='Enter goal weight'name='goalWeight'/>
+                <input type='text' value={formData.goal} onChange={handleChange} name='goal'/>
                 </div>
 
                 <label htmlFor='stuck'>Where are you getting stuck right now on your own, and why are you looking to be coached?</label>
-                <textarea name='stuck' id='stuck' cols='30' rows = '10' placeholder='Enter Here'></textarea>
+                <textarea name='stuck' id='stuck' cols='30' rows = '10' type='text' value={formData.stuck} onChange={handleChange}></textarea>
                 
                 <label htmlFor='start'>If accepted, how soon are you looking to get started</label>
-                <select name='start' id='start'>
+                <select name='start' id='start' value={formData.start} onChange={handleChange}>
                     <option value='immediately'>Immediately</option>
                     <option value='twoWeeks'>2 Weeks</option>
                     <option value='fourWeeks'>4 Weeks</option>
@@ -170,7 +180,7 @@ The guidance provided by Jacob Oestreicher Coaching is for educational purposes 
 By signing here with Jacob Oestreicher Coaching, clients confirm they have read, understood, and agreed to the terms outlined in this policy.</p>
 
                 <label htmlFor='signature'>Signature*</label>
-                <input type='text' placeholder='Enter Signature' name='signature'/>
+                <input type='text' placeholder='Enter Signature' name='signature' value={formData.signature} onChange={handleChange}/>
             
                 <button className = {styles.formButton} type='reset'>Reset</button>
                 <button className = {styles.formButton} type='submit'>Submit</button>
