@@ -43,31 +43,46 @@ const Form = () => {
     const validateForm = (data) => {
         const errors = {};
 
-        if (!data.fname.trim()) {
+        if (data.fname.trim() === '') {
             errors.fname = 'First Name is required';
         } 
 
-        if (!data.lname.trim()) {
+        if (data.lname.trim() === '') {
             errors.fname = 'Last Name is required';
         } 
 
 
-        if (!data.email.trim()) {
+        if (data.email.trim() === '') {
             errors.email = 'Email is required';
         } else if (!/\S+@\S+\.\S+/.test(data.email)) {
             errors.email = 'Email is invalid. Email addresses should follow the format user@domain.com.';
         }
 
         if (!data.phone) {
-            errors.password = 'Phone number is required';
+            errors.phone = 'Phone number is required';
         } else if (!/^\d{10}$/.test(data.phone)) {
             errors.phone = 'Phone number must be 10 digits in format XXXXXXXXXX';
         }
 
-        if (data.confirmPassword !== data.password) {
-            errors.confirmPassword = 'Passwords do not match';
+        if (!data.age) {
+            errors.age = 'Age is required';
+        } else if (Number(data.age) <= 5 || Number(str) >= 100 || !/^\d+$/.test(input)) {
+            errors.age = 'Please enter a valid age'
         }
 
+        if (!data.height){
+            errors.height = 'Height is required'
+        } else if (!/^[1-9]'\d{1,2}$/.test(data.height)){
+            errors.height = "Please enter height like 6'7 for '6 foot 7 inches'"
+        }
+
+        if (!data.weight){
+            errors.weight = 'Weight is required'
+        } else if (!/^\d{2,3}$/.test(data.phone) ){
+            errors.weight = "Please enter a valid rounded weight like 123 for 123.5lbs"
+        }
+
+        
         return errors;
     };
 
