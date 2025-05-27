@@ -1,0 +1,14 @@
+Front-end is pretty much done
+
+Left to be implemented -
+  - Google Calendar Api integration (Probably most logical next step)
+    - Google Api?
+    - Acquity Api? 
+    - Manual?
+  - Make postgresql database while using docker with appropriate columns/table (Time to remind)
+    - When form is submitted Correctly add to database, probably Python (Django probably)
+  - Script so that when a form is submitted jacob gets email
+  - Script so that when a form is submitted client gets email and text (confirmation)
+  - Script so that client gets a reminder 1 hour prior ?
+
+  - Hosting on AWS using S3, EC2 and Cloudwatch for automation.
