@@ -24,7 +24,3 @@ Tasks -
   - Try and integrate Google Maps Api rather than the iframe we currently have (Optional-Maybe not best idea)
     if decide not to, make it so the iframe looks better on mobile. (EST {api route - 1hr or more} {beautify route - 20min })
   
-  - For people who do send automated text message script that runs when they submit the form and it gets posted to Django.
-    Workflow would be form submit -> views.py and then add method for this, google this (EST 1hr)
-  
-  - Same thing but email to jacob (EST 30min)
