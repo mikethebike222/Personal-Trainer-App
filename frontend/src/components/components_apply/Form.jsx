@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import styles from './Form.module.css'
+import axios from 'axios'
 
 const Form = () => {
     const [formData, setFormData] = useState({
@@ -33,39 +34,68 @@ const Form = () => {
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length === 0) {
-            // Form submission logic here
-            console.log('Form submitted successfully!');
-        } else {
-            console.log('Form submission failed due to validation errors.');
+            const postData = async () => {
+                try {
+                    const response = await axios.post(
+                        'http://127.0.0.1:8000/sends/',
+                        formData,
+                        {
+                            headers: { 'Content-Type': 'application/json' }
+                        }
+                    )
+                    console.log(response.data)
+                    setFormData(({
+                        fname: '',
+                        lname: '',
+                        email: '',
+                        phone: '',
+                        age: '',
+                        height: '',
+                        weight: '',
+                        commit: 'Yes',
+                        goal: '',
+                        stuck: '',
+                        start: 'Immediately',
+                        signature: '',
+                    }))
+
+                } catch (error) {
+                    console.error('Error posting data:', error)
+                }
+            }
+            postData() 
+        }   
+         else {
+            console.log('Form submission failed due to validation errors.')
         }
     }
 
     const validateForm = (data) => {
-        const errors = {};
+        const errors = {}
 
         if (data.fname.trim() === '') {
-            errors.fname = 'First Name is required';
+            errors.fname = 'First Name is required'
         } 
 
         if (data.lname.trim() === '') {
-            errors.lname = 'Last Name is required';
+            errors.lname = 'Last Name is required'
         } 
 
 
         if (data.email.trim() === '') {
             errors.email = 'Email is required';
         } else if (!/\S+@\S+\.\S+/.test(data.email)) {
-            errors.email = 'Email is invalid. Email addresses should follow the format user@domain.com.';
+            errors.email = 'Email is invalid. Email addresses should follow the format user@domain.com.'
         }
 
         if (!data.phone) {
-            errors.phone = 'Phone number is required';
+            errors.phone = 'Phone number is required'
         } else if (!/^\d{10}$/.test(data.phone)) {
-            errors.phone = 'Phone number must be 10 digits in format XXXXXXXXXX';
+            errors.phone = 'Phone number must be 10 digits in format XXXXXXXXXX'
         }
 
         if (!data.age) {
-            errors.age = 'Age is required';
+            errors.age = 'Age is required'
         } else if (Number(data.age) <= 5 || Number(data.age) >= 100 || !/^\d+$/.test(data.age)) {
             errors.age = 'Please enter a valid age'
         }
