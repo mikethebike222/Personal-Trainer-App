@@ -8,14 +8,51 @@ services:
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "client"
     ports:
       - "5432:5432"
     volumes: 
+      - postgres_data:/var/lib/postgresql/data
       - ./postgres/scripts:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+
+  django_backend:
+    build: ./backend
+    container_name: django_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      DB_NAME: "client"
+      DB_USER: "postgres"
+      DB_PASSWORD: "postgres"
+      DB_HOST: "client_db"
+      DB_PORT: "5432"
+    volumes:
+      - ./backend:/app
+    networks:
+      - app-network
+    depends_on:
+      - client_db
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
 
   adminer:
     image: adminer
     restart: always
     ports: 
       - "8080:8080"
+    networks:
+      - app-network
+    depends_on:
+      - client_db
 
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge
