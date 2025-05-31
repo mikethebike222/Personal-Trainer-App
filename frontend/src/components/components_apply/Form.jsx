@@ -16,6 +16,7 @@ const Form = () => {
         stuck: '',
         start: 'Immediately',
         signature: '',
+        signup: 'False',
     })
 
     const [errors, setErrors] = useState({})
@@ -57,6 +58,7 @@ const Form = () => {
                         stuck: '',
                         start: 'Immediately',
                         signature: '',
+                        signup: 'False',
                     }))
 
                 } catch (error) {
@@ -89,10 +91,13 @@ const Form = () => {
         }
 
         if (!data.phone) {
-            errors.phone = 'Phone number is required'
-        } else if (!/^\d{10}$/.test(data.phone)) {
-            errors.phone = 'Phone number must be 10 digits in format XXXXXXXXXX'
-        }
+            errors.phone = 'Phone number is required';
+        } else {
+            const digitsOnly = data.phone.replace(/\D/g, ''); // Remove non-digit characters
+            if (digitsOnly.length < 10) {
+                errors.phone = 'Phone number must include at least 10 digits';
+            }
+        }        
 
         if (!data.age) {
             errors.age = 'Age is required'
@@ -102,14 +107,10 @@ const Form = () => {
 
         if (!data.height){
             errors.height = 'Height is required'
-        } else if (!/^[1-9]'\d{1,2}$/.test(data.height)){
-            errors.height = "Please enter height like 6'7 for '6 foot 7 inches'"
         }
 
         if (!data.weight){
             errors.weight = 'Weight is required'
-        } else if (!/^\d{2,3}$/.test(data.weight) ){
-            errors.weight = "Please enter a valid rounded weight like 123 for 123.3lbs"
         }
 
         if (!data.goal) {
@@ -122,6 +123,10 @@ const Form = () => {
         if (data.signature !== expectedSignature) {
             errors.signature = "Invalid signature, should be your legal first and last name"
           }
+        
+        if (!data.signup) {
+            errors.signup = "You must agree to receive SMS/email updates."
+        }
 
         return errors;
     };
@@ -174,7 +179,7 @@ const Form = () => {
                 </div>
                 </div>
 
-                <div className= {styles.formRow}>
+                <div className= {styles.formRow}>              
                 <div className= {styles.formGroup}>
                 <label htmlFor='age'>Age (required)</label>
                 <input type='text' value={formData.age} onChange={handleChange} name='age'/>
@@ -186,7 +191,7 @@ const Form = () => {
                 </div>
 
                 <div className= {styles.formGroup}>
-                <label htmlFor='height'>Height, feet and inches (e.g. 5'7) (required)</label>
+                <label htmlFor='height'>Height, Feet and Inches(required)</label>
                 <input type='text' value={formData.height} onChange={handleChange} name='height'/>
                 {errors.height && (
                     <span className={styles.errorMessage}>
@@ -253,17 +258,34 @@ The guidance provided by Jacob Oestreicher Coaching is for educational purposes 
 By signing here with Jacob Oestreicher Coaching, clients confirm they have read, understood, and agreed to the terms outlined in this policy.</p>
 
                 <label htmlFor='signature'>Signature (required)</label>
-                <input type='text' name='signature' value={formData.signature} onChange={handleChange}/>
+                <input
+                type='text'
+                name='signature'
+                value={formData.signature}
+                onChange={handleChange}
+                />
                 {errors.signature && (
-                    <span className={styles.errorMessage}>
-                        <div className= {styles.errorSignature}>
-                        {errors.signature}
-                        </div>
-                    </span>
+                <span className={styles.errorMessage}>
+                    <div className={styles.errorSignature}>
+                    {errors.signature}
+                    </div>
+                </span>
                 )}
-            
+                <div className={styles.checkboxRow}>
+                    <label className = {styles.checkboxlabel} htmlFor='signup'>
+                        <input
+                        className = {styles.checkInput}
+                        type='checkbox'
+                        name='signup'
+                        checked={formData.signup}
+                        onChange={(e) =>
+                        setFormData({ ...formData, signup: e.target.checked })
+                        }
+                        />    
+                    I agree to receive SMS and email updates related to Jacob Oestreicher Coaching.
+                    </label>
+                </div>
                 <button className = {styles.formButton} type='submit'>Submit</button>
-
             </form>
         </div>
     )
