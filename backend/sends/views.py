@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
 from .forms import MemberForm
+from .email import email_alert, email_owner
 
 
 # Method thats recieves a post of client data in json format and then 
@@ -23,7 +24,12 @@ def recieve_data(request):
 
                 # Save the form
                 member = form.save()
+                email_owner(data)
+                
                 print(f"Saved member: {member}") 
+
+                if data.get("signup"):
+                    email_alert(data.get("email")) 
                 
                 return JsonResponse({
                     'message': 'Data received and saved successfully',
