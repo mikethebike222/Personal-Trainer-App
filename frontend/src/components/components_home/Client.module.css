@@ -1,15 +1,16 @@
 .clientcontainer {
     background-color: #eeeee4;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
   
   .clienttext {
     color: black;
-    font-size: clamp(23px, 5vw, 35px);
+    font-size: clamp(30px, 7vw, 45px);
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 2rem;
     width: 100%;
+    font-family: Impact, sans-serif;
   }
   
   .clientimagebutton {
@@ -63,3 +64,34 @@
       max-width: 60%;
     }
   }
+  
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-30%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .slideFromRight {
+    animation: slideInFromRight 0.4s ease;
+  }
+  
+  .slideFromLeft {
+    animation: slideInFromLeft 0.4s ease;
+  }
+  

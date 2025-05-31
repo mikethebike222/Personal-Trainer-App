@@ -3,11 +3,12 @@ const Discipline = () => {
 
     const disciplineStyle = {
         color: 'Black',
-        fontSize: 'clamp(28px, 6vw, 55px)',
+        fontSize: 'clamp(40px, 9vw, 75px)',
         padding: '5px',
         textAlign: 'center',
         textTransform: 'uppercase',
         fontWeight: 'bold',
+        fontFamily: 'Impact, sans-serif',
       }
 
     return (

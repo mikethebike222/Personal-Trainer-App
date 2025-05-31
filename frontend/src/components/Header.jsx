@@ -1,3 +1,4 @@
+
 const Header = () => {
     const headerStyle = {
         color: 'lightgray',
@@ -8,6 +9,7 @@ const Header = () => {
         textTransform: 'uppercase',
         margin: '0',
         width: '100%',
+        fontFamily: 'Impact, sans-serif',
       }
 
     return (
