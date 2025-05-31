@@ -12,6 +12,26 @@ Left to be implemented -
   - Script so that client gets a reminder 1 hour prior ?
 
 
-  Remember to change cors from true to a specific port - settings.py file
+  **** Remember to change cors from true to a specific port - settings.py file
 
   - Hosting on Azure serverless
+
+Tasks - 
+
+  - Beautify the scroll feature, when clicking left and right to view client transformations make the button nicer and 
+    make an animation (EST 45min)
+
+  - Make Height a drop down button with feet and inches, update use state and make sure to not have it set to a value initially
+    as it is a required value/values (EST 30min)
+  
+  - Try and integrate Google Maps Api rather than the iframe we currently have (Optional-Maybe not best idea)
+    if decide not to, make it so the iframe looks better on mobile. (EST {api route - 1hr or more} {beautify route - 20min })
+  
+  - Make additional button that a user can select on form to decide if they want to sign up for sms and emails.
+    Need to do research on this because i dont think you can just email people without permission. 
+    Would be Yes or no or checkbox thing (EST 30min) also update usestate
+  
+  - For people who do send automated text message script that runs when they submit the form and it gets posted to Django.
+    Workflow would be form submit -> views.py and then add method for this, google this (EST 1hr)
+  
+  - Same thing but email to jacob (EST 30min)
