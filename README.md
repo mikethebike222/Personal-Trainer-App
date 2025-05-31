@@ -11,6 +11,7 @@ Full-stack web application with:
 - **Backend**: Django REST API
 - **Database**: PostgreSQL (containerized with Docker)
 - **Admin Interface**: Adminer for database management
+- **Hosting**: Azure services
 
 ## Getting Started
 
