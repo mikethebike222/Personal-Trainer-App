@@ -104,4 +104,20 @@ button:hover{
     border-color: #d32f2f;
     background-color: #fff8f8;
 }
+
+.checkboxRow {
+    text-align: left;
+    padding: 0px;
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .checkInput {
+    width: auto;
+    margin-right: 1%;
+}
+
+.checkboxlabel{
+    display: flex;
+}
   
