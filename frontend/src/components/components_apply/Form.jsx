@@ -16,7 +16,7 @@ const Form = () => {
         stuck: '',
         start: 'Immediately',
         signature: '',
-        signup: 'False',
+        signup: false,
     })
 
     const [errors, setErrors] = useState({})
@@ -58,7 +58,7 @@ const Form = () => {
                         stuck: '',
                         start: 'Immediately',
                         signature: '',
-                        signup: 'False',
+                        signup: false,
                     }))
 
                 } catch (error) {
@@ -124,9 +124,7 @@ const Form = () => {
             errors.signature = "Invalid signature, should be your legal first and last name"
           }
         
-        if (!data.signup) {
-            errors.signup = "You must agree to receive SMS/email updates."
-        }
+
 
         return errors;
     };
