@@ -64,7 +64,9 @@ Full-stack web application with:
 ## Development Status
 **In Active Development**
 
-The backend logic and additional features are still being finalized.
+Currently in process of testing deployment. 
+Static web app link can be found here: https://gentle-cliff-05572e80f.6.azurestaticapps.net/  
+
 
 ## Tech Stack
 - **Frontend**: React, React Router
