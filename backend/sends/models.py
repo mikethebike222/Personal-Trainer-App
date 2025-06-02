@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Member(models.Model):
@@ -15,6 +16,7 @@ class Member(models.Model):
     start = models.CharField(max_length=25, default="Immediately")
     signature = models.CharField(max_length=150, default="None")
     signup = models.BooleanField(default = False)
+    date = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.fname + ' ' + self.lname

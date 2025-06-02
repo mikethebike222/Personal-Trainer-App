@@ -3,6 +3,11 @@ import styles from './Form.module.css'
 import axios from 'axios'
 
 const Form = () => {
+    const today = new Date();
+    const formattedDate = `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth()+1)
+    .toString().padStart(2, '0')}/${today.getFullYear()}`;
+
+
     const [formData, setFormData] = useState({
         fname: '',
         lname: '',
@@ -17,6 +22,7 @@ const Form = () => {
         start: 'Immediately',
         signature: '',
         signup: false,
+        date: 'formattedDate',
     })
 
     const [errors, setErrors] = useState({})
@@ -59,6 +65,7 @@ const Form = () => {
                         start: 'Immediately',
                         signature: '',
                         signup: false,
+                        date, formattedDate,
                     }))
 
                 } catch (error) {
@@ -132,7 +139,7 @@ const Form = () => {
 
     return(
         <div className = {styles.formContainer}>
-            <h1>LET'S DO THIS.</h1>
+            <h1 >LET'S DO THIS.</h1>
             <form onSubmit={handleSubmit}>
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
