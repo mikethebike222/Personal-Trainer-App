@@ -10,8 +10,9 @@
 
 .offerH2{
     padding-left: 7%;
-    font-size: clamp(31px, 6.5vw, 60px);
+    font-size: clamp(41px, 8vw, 75px);
     font-weight: bolder;
+    font-family: impact;
 }
 
 .offerUl{

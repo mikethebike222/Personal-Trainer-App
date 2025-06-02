@@ -18,9 +18,9 @@ Left to be implemented -
 
 Tasks - 
 
-  - Beautify the scroll feature, when clicking left and right to view client transformations make the button nicer and 
-    make an animation (EST 45min)
+  - Add date to table (EST 5min) x 
+  
+  - Use .env variables rather than hard code and determine how that stuff works when deployed (Est 30min)
 
-  - Try and integrate Google Maps Api rather than the iframe we currently have (Optional-Maybe not best idea)
-    if decide not to, make it so the iframe looks better on mobile. (EST {api route - 1hr or more} {beautify route - 20min })
+  - Learn how to deploy (1 hr)
   

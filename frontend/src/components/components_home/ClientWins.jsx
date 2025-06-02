@@ -10,17 +10,14 @@ const clientImages = Object
 
 const ClientWins = () => {
   const [idx, setIdx] = useState(0)
-  const [direction, setDirection] = useState('right')
   
   // Function for going back in the list 
   const prev = () => {
-    setDirection('left')
     setIdx(i => (i - 1 + clientImages.length) % clientImages.length)
   }
 
   // Function for going forward in the list
   const next = () => {
-    setDirection('right')
     setIdx(i => (i + 1) % clientImages.length)
   }
 
@@ -29,7 +26,7 @@ const ClientWins = () => {
           <h3 className = {styles.clienttext}>Client Wins</h3>
           <div className = {styles.clientimagebutton}>
             <button className = {styles.leftbutton} onClick={prev}>‹</button>
-            <img key={idx} className={`${styles.clientimage} ${direction === 'right' ? styles.slideFromRight : styles.slideFromLeft}`} src = {clientImages[idx]} alt={`Client ${idx+1}`} />
+            <img className={styles.clientimage} src = {clientImages[idx]} alt={`Client ${idx+1}`} />
             <button className = {styles.rightbutton} onClick={next}>›</button>
           </div>
         </div>
