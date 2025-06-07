@@ -26,6 +26,7 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
+          cd backend
           python -m venv venv
           source venv/bin/activate
       
@@ -36,7 +37,9 @@ jobs:
           pip install -r requirements.txt
       
       - name: Collect static files
-          run: python3 manage.py collectstatic --noinput
+          run: |
+            cd backend 
+            python3 manage.py collectstatic --noinput
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
