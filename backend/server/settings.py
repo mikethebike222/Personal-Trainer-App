@@ -24,7 +24,7 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yzv-a1uj3*w%@c=-&c@yjekxu2uve@9xf0%ww9n+$x$wm5$eo8'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,8 +129,8 @@ USE_TZ = True
 
 # Change this once ready to deploy
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://localhost:5173", # Whatever port you have it set to, mine is 5173
+    "http://127.0.0.1:5173",
     "https://gentle-cliff-05572e80f.6.azurestaticapps.net" 
 ]
 
