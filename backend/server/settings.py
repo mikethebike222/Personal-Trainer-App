@@ -130,7 +130,8 @@ USE_TZ = True
 # Change this once ready to deploy
 CORS_ALLOW_ORIGINS = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "https://gentle-cliff-05572e80f.6.azurestaticapps.net"
 ]
 
 
