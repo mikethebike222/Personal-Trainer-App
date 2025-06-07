@@ -43,7 +43,7 @@ const Form = () => {
             const postData = async () => {
                 try {
                     const response = await axios.post(
-                        'http://127.0.0.1:8000/sends/',
+                        'http://127.0.0.1:8000/submit/',
                         formData,
                         {
                             headers: { 'Content-Type': 'application/json' }
@@ -64,7 +64,7 @@ const Form = () => {
                         start: 'Immediately',
                         signature: '',
                         signup: false,
-                        date, formattedDate,
+                        date: formattedDate,
                     }))
 
                 } catch (error) {

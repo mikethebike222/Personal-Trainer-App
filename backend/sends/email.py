@@ -23,12 +23,12 @@ def email_owner(body):
     content_body = (
         f"Full Name: {body.get('fname')} {body.get('lname')}\n"
         f"Email: {body.get('email')}\n"
-        f"Phone Number: {body.get('fname')}\n"
+        f"Phone Number: {body.get('phone')}\n"
         f"Age: {body.get('age')}\n"
         f"Height: {body.get('height')}\n"
         f"Weight: {body.get('weight')}\n"
-        f"Commitment: {body.get('commit')}\n"
-        f"Goal: {body.get('goal')}\n"
+        f"Commitment Status: {body.get('commit')}\n"
+        f"Goal Weight: {body.get('goal')}\n"
         f"Why they are stuck: {body.get('stuck')}\n"
         f"When they want to start: {body.get('start')}\n"
     )
