@@ -18,10 +18,14 @@ Left to be implemented -
 
 Tasks - 
 
-  - https://learn.microsoft.com/en-us/samples/azure-samples/azure-django-postgres-aca/azure-django-postgres-flexible-aca/ (Est 30min)
+  - Responsive Mobile design (EST 30 min)
+      - Fix wishy washy thing on the phone
+  - Make it so there is a green loading icon after submitting until actually submitted (EST 45 min)
+  - Success or errors thing for submitting (EST 30 min)
+  - Comments everywhere (EST 1.5 hours)
+  
+  - Domain name (Est ? 15-30)
+  - Switch emails to his (Est 15 min)
+  - Switch gcalender email to his (Est 15 min)
 
-  - Try and get it working if one of us has it working chipotle 
 
-  - Try not to gpt because it sucks at deployment
-
-  - Work on your own branch, will go with whomevers is better

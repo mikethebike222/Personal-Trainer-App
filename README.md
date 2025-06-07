@@ -9,9 +9,8 @@ Building a web application for Jacob Oestreicher's coaching business.
 Full-stack web application with:
 - **Frontend**: React.js with routing
 - **Backend**: Django REST API
-- **Database**: PostgreSQL (containerized with Docker)
-- **Admin Interface**: Adminer for database management
-- **Hosting**: Azure services
+- **Local Database**: PostgreSQL (containerized with Docker)
+- **Hosting**: Azure services(Azure Static Web Apps, Azure Functions, Azure Web Services, Azure PostgreSQL Database)
 
 ## Getting Started
 
@@ -62,15 +61,14 @@ Full-stack web application with:
 - More endpoints will be added as development continues
 
 ## Development Status
-**In Active Development**
+**In Active Testing**
 
 Currently in process of testing deployment. 
-Static web app link can be found here: https://gentle-cliff-05572e80f.6.azurestaticapps.net/  
-
+Static web app link can be found here: https://gentle-cliff-05572e80f.6.azurestaticapps.net/
 
 ## Tech Stack
 - **Frontend**: React, React Router
 - **Backend**: Django, Django REST Framework
 - **Database**: PostgreSQL
 - **Containerization**: Docker, Docker Compose
-- **Database Management**: Adminer
+- **Hosting**: Azure Services
