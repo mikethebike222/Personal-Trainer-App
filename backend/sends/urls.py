@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.recieve_data, name="recieve_data"),
+    path("", views.home, name="home"),
+    path("submit/", views.receive_data, name="receive_data")
 ]

@@ -54,3 +54,6 @@ def recieve_data(request):
     else:
         # Not a post so 405 status
         return HttpResponse("Only Supports Post Requests", status=405)
+    
+def home(request):
+    return HttpResponse("Backend is running")

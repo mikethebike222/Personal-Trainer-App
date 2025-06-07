@@ -14,6 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.deployment')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +29,11 @@ SECRET_KEY = 'django-insecure-yzv-a1uj3*w%@c=-&c@yjekxu2uve@9xf0%ww9n+$x$wm5$eo8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'coachingwebapp-c3fra9fxg0byazdz.westus-01.azurewebsites.net',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -123,13 +128,18 @@ USE_I18N = True
 USE_TZ = True
 
 # Change this once ready to deploy
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://gentle-cliff-05572e80f.6.azurestaticapps.net"
+]
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

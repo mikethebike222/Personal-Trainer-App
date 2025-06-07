@@ -4,8 +4,7 @@ import axios from 'axios'
 
 const Form = () => {
     const today = new Date();
-    const formattedDate = `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth()+1)
-    .toString().padStart(2, '0')}/${today.getFullYear()}`;
+    const formattedDate = today.toISOString().split('T')[0];
 
 
     const [formData, setFormData] = useState({
@@ -22,7 +21,7 @@ const Form = () => {
         start: 'Immediately',
         signature: '',
         signup: false,
-        date: 'formattedDate',
+        date: formattedDate,
     })
 
     const [errors, setErrors] = useState({})
