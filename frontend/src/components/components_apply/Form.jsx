@@ -43,7 +43,7 @@ const Form = () => {
             const postData = async () => {
                 try {
                     const response = await axios.post(
-                        'http://127.0.0.1:8000/submit/',
+                        'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
                         formData,
                         {
                             headers: { 'Content-Type': 'application/json' }
