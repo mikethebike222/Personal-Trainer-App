@@ -21,11 +21,11 @@ MIDDLEWARE = [
 
 STORAGES = {
     "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage"
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFileStorage"
-    }
+        "BACKEND": "whitenoise.storage.CompressedStaticFileStorage",
+    },
 }
 
 CONNECTION = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
