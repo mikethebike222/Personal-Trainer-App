@@ -11,7 +11,7 @@ from .email import email_alert, email_owner
 # saves to the postgresql database.
 # Returns: Response to the server that posted the data with appropriate info
 @csrf_exempt
-def recieve_data(request):
+def receive_data(request):
     if request.method == "POST":
         try:
             data = json.loads(request.body)
