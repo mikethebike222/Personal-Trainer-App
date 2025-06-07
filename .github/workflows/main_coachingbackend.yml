@@ -30,7 +30,10 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-          run: pip3 install -r requirements.txt
+        run: |
+          cd backend
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
       
       - name: Collect static files
           run: |
