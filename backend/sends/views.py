@@ -3,7 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
 from .forms import MemberForm
-from .email import email_alert, email_owner
+import requests
+import os
 
 
 # Method thats recieves a post of client data in json format and then 
@@ -24,12 +25,15 @@ def receive_data(request):
 
                 # Save the form
                 member = form.save()
-                email_owner(data)
-                
-                print(f"Saved member: {member}") 
 
-                if data.get("signup"):
-                    email_alert(data.get("email")) 
+                try:
+                    AZURE_FUNC_KEY = os.environ.get("AZURE_FUNC_KEY")
+                    resp = requests.post(AZURE_FUNC_KEY, json=data, timeout=10)
+
+                    print("Azure Function response:", resp.status_code, resp.text)
+                except Exception as e:
+                    print("Failed to call Azure Function:", e)
+                
                 
                 return JsonResponse({
                     'message': 'Data received and saved successfully',
