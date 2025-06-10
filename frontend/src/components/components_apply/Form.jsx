@@ -5,6 +5,7 @@ import axios from 'axios'
 const Form = () => {
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
+    
 
 
     const [formData, setFormData] = useState({
@@ -25,6 +26,9 @@ const Form = () => {
     })
 
     const [errors, setErrors] = useState({})
+    const [loading, setLoading] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState('')
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,46 +38,48 @@ const Form = () => {
         });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const newErrors = validateForm(formData);
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length === 0) {
-            const postData = async () => {
-                try {
-                    const response = await axios.post(
-                        'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
-                        formData,
-                        {
-                            headers: { 'Content-Type': 'application/json' }
-                        }
-                    )
-                    console.log(response.data)
-                    setFormData(({
-                        fname: '',
-                        lname: '',
-                        email: '',
-                        phone: '',
-                        age: '',
-                        height: '',
-                        weight: '',
-                        commit: 'Yes',
-                        goal: '',
-                        stuck: '',
-                        start: 'Immediately',
-                        signature: '',
-                        signup: false,
-                        date: formattedDate,
-                    }))
-
-                } catch (error) {
-                    console.error('Error posting data:', error)
-                }
+            setLoading(true);
+            setSubmitStatus('');
+            try {
+                const response = await axios.post(
+                    'https://jacoboestreicher-backend-euhpd8d2abfwhhe3.westus-01.azurewebsites.net/submit/',
+                    formData,
+                    {
+                        headers: { 'Content-Type': 'application/json' }
+                    }
+                )
+                console.log(response.data)
+                setFormData({
+                    fname: '',
+                    lname: '',
+                    email: '',
+                    phone: '',
+                    age: '',
+                    height: '',
+                    weight: '',
+                    commit: 'Yes',
+                    goal: '',
+                    stuck: '',
+                    start: 'Immediately',
+                    signature: '',
+                    signup: false,
+                    date: formattedDate,
+                })
+                setSubmitStatus('success');
+            } catch (error) {
+                console.error('Error posting data:', error)
+                setSubmitStatus('error');
+            } finally {
+                setLoading(false);
             }
-            postData() 
-        }   
-         else {
+        } else {
+            setSubmitStatus('error');
             console.log('Form submission failed due to validation errors.')
         }
     }
@@ -282,7 +288,20 @@ By signing here with Jacob Oestreicher Coaching, clients confirm they have read,
                     I agree to receive SMS and email updates related to Jacob Oestreicher Coaching.
                     </label>
                 </div>
-                <button className = {styles.formButton} type='submit'>Submit</button>
+                <button className = {styles.formButton} type='submit' disabled={loading}>
+                    Submit
+                </button>
+                {loading && (
+                    <div className={styles.loadingContainer}>
+                        <div className={styles.loader}></div>
+                    </div>
+                )}
+                {!loading && submitStatus === 'success' && (
+                    <div className={styles.successBox}>Form submitted successfully!</div>
+                )}
+                {!loading && submitStatus === 'error' && (
+                    <div className={styles.errorBox}>There was a problem submitting the form.</div>
+                )}
             </form>
         </div>
     )
