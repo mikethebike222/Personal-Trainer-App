@@ -143,77 +143,77 @@ const Form = () => {
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='firstname'>First Name (required)</label>
-                <input type='text' value={formData.fname} name='fname' onChange={handleChange}/>
                 {errors.fname && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.fname}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.fname} name='fname' onChange={handleChange}/>
                 </div>
                 <div className= {styles.formGroup}>
                 <label htmlFor='lastname'>Last Name (required)</label>
-                <input type='text' value={formData.lname} onChange={handleChange} name='lname'/>
                 {errors.lname && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.lname}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.lname} onChange={handleChange} name='lname'/>
                 </div>
                 </div>
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='email'>Email (required)</label>
-                <input type='text' value={formData.email} onChange={handleChange} name='email'/>
                 {errors.email && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.email}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.email} onChange={handleChange} name='email'/>
                 </div>
 
                 <div className= {styles.formGroup}>
                 <label htmlFor='phone'>Phone # (required)</label>
-                <input type='text' value={formData.phone} onChange={handleChange} name='phone'/>
                 {errors.phone && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.phone}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.phone} onChange={handleChange} name='phone'/>
                 </div>
                 </div>
 
                 <div className= {styles.formRow}>              
                 <div className= {styles.formGroup}>
                 <label htmlFor='age'>Age (required)</label>
-                <input type='text' value={formData.age} onChange={handleChange} name='age'/>
                 {errors.age && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.age}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.age} onChange={handleChange} name='age'/>
                 </div>
 
                 <div className= {styles.formGroup}>
-                <label htmlFor='height'>Height, Feet and Inches(required)</label>
-                <input type='text' value={formData.height} onChange={handleChange} name='height'/>
+                <label htmlFor='height'>Height, Feet and Inches (required)</label>
                 {errors.height && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.height}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.height} onChange={handleChange} name='height'/>
                 </div>
                 </div>
 
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='weight'>Weight in pounds (required)</label>
-                <input type='text' value={formData.weight} onChange={handleChange} name='weight'/>
                 {errors.weight && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.weight}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.weight} onChange={handleChange} name='weight'/>
                 </div>
 
                 <div className= {styles.formGroup}>
@@ -226,12 +226,12 @@ const Form = () => {
                 </div>
                 <div className= {styles.formGroup}>
                 <label htmlFor='goalWeight'>Do you have a goal weight in mind, if so what is it? (required)</label>
-                <input type='text' value={formData.goal} onChange={handleChange} name='goal'/>
                 {errors.goal && (
-                    <span className={styles.errorMessage}>
+                    <div className={styles.errorBox}>
                         {errors.goal}
-                    </span>
+                    </div>
                 )}
+                <input type='text' value={formData.goal} onChange={handleChange} name='goal'/>
                 </div>
 
                 <label htmlFor='stuck'>Where are you getting stuck right now on your own, and why are you looking to be coached?</label>
@@ -262,19 +262,12 @@ The guidance provided by Jacob Oestreicher Coaching is for educational purposes 
 By signing here with Jacob Oestreicher Coaching, clients confirm they have read, understood, and agreed to the terms outlined in this policy.</p>
 
                 <label htmlFor='signature'>Signature (required)</label>
-                <input
-                type='text'
-                name='signature'
-                value={formData.signature}
-                onChange={handleChange}
-                />
                 {errors.signature && (
-                <span className={styles.errorMessage}>
-                    <div className={styles.errorSignature}>
-                    {errors.signature}
+                    <div className={styles.errorBox}>
+                        {errors.signature}
                     </div>
-                </span>
                 )}
+                <input type='text' name='signature' value={formData.signature} onChange={handleChange}/>
                 <div className={styles.checkboxRow}>
                     <label className = {styles.checkboxlabel} htmlFor='signup'>
                         <input
