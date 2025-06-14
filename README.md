@@ -4,17 +4,20 @@ Building a web application for Jacob Oestreicher's coaching business.
 
 **TikTok**: [@jacoboestreichercoaching](https://www.tiktok.com/@jacoboestreichercoaching)
 
+Web app link can be found here: https://gentle-cliff-05572e80f.6.azurestaticapps.net/
+
+
 ## Project Overview
 
 Full-stack web application with:
 - **Frontend**: React.js with routing
 - **Backend**: Django REST API
-- **Local Database**: PostgreSQL (containerized with Docker)
-- **Hosting**: Azure services(Azure Static Web Apps, Azure Functions, Azure Web Services, Azure PostgreSQL Database)
+- **Database**: PostgreSQL (locally containerized with Docker)
+- **Hosting**: Azure Services(Azure Static Web Apps, Azure Functions, Azure Web Services, Azure PostgreSQL Database)
 
 ## Getting Started
 
-### Prerequisites
+### Pre-reqs
 - Node.js and npm
 - Docker and Docker Compose
 - Git
@@ -53,22 +56,12 @@ Full-stack web application with:
 ### Access Points
 - **Frontend**: http://localhost:3000 (or your Vite dev server port)
 - **Backend API**: http://localhost:8000
-- **Database Admin (Adminer)**: http://localhost:8080
-  - Admin info is private
 
 ### API Endpoints
 - `POST /sends/` - Submit user form data
-- More endpoints will be added as development continues
+- More endpoints may be added as if needed
 
 ## Development Status
 **In Active Testing**
 
 Currently in process of testing deployment. 
-Static web app link can be found here: https://gentle-cliff-05572e80f.6.azurestaticapps.net/
-
-## Tech Stack
-- **Frontend**: React, React Router
-- **Backend**: Django, Django REST Framework
-- **Database**: PostgreSQL
-- **Containerization**: Docker, Docker Compose
-- **Hosting**: Azure Services
