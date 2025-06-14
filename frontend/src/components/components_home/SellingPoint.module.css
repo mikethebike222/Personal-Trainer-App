@@ -40,12 +40,33 @@
     .inspireContainer {
       align-items: flex-start;
       gap: 1.5rem;
+      flex-direction: column;
     }
     .inspireImg {
-      max-width: 50%;
+      max-width: 45%;
     }
     .inspireText {
+      max-width: 45%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .inspireContainer {
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .inspireImg {
       max-width: 70%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .inspireText {
+      max-width: 85%;
+      text-align: center;
+    }
+    .inspireHead {
+      text-align: center;
     }
   }
   
