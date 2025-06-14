@@ -10,13 +10,24 @@
 
 .offerH2{
     padding-left: 7%;
-    font-size: clamp(41px, 8vw, 75px);
+    font-size: clamp(37px, 8vw, 75px);
     font-weight: bolder;
     font-family: impact;
+    
 }
 
 .offerUl{
     padding-left: 5%;
-    font-size: clamp(20px, 3vw, 25px);
+    font-size: clamp(17px, 3vw, 25px);
     line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .offerContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: .1rem;
+        padding-top: 8%; 
+
+      }
 }
