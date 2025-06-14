@@ -5,6 +5,7 @@ import json
 from .forms import MemberForm
 import requests
 import os
+import threading
 
 
 # Method thats recieves a post of client data in json format and then 
@@ -25,21 +26,17 @@ def receive_data(request):
 
                 # Save the form
                 member = form.save()
+                def call_function():
+                    try:
+                        AZURE_FUNC_KEY = os.environ.get("AZURE_FUNC_KEY")
+                        requests.post(AZURE_FUNC_KEY, json=data, timeout=10)
+                    except Exception as e:
+                        print("Azure Function call failed:", e)
 
-                try:
-                    AZURE_FUNC_KEY = os.environ.get("AZURE_FUNC_KEY")
-                    resp = requests.post(AZURE_FUNC_KEY, json=data, timeout=10)
+                threading.Thread(target=call_function).start()
 
-                    print("Azure Function response:", resp.status_code, resp.text)
-                except Exception as e:
-                    print("Failed to call Azure Function:", e)
-                
-                
-                return JsonResponse({
-                    'message': 'Data received and saved successfully',
-                    'data': data,
-                    'member_id': member.id
-                })
+                return JsonResponse({"status": "success"})
+
             
             # Else There was an error with the form
             else:
