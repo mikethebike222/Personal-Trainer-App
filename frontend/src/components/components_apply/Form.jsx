@@ -79,6 +79,7 @@ const Form = () => {
             } finally {
                 setLoading(false);
             }
+            postData()
         } else {
             setSubmitStatus('error');
             console.log('Form submission failed due to validation errors.')
