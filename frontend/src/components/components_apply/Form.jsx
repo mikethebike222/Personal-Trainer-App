@@ -48,7 +48,7 @@ const Form = () => {
             setSubmitStatus('');
             try {
                 const response = await axios.post(
-                    'https://jacoboestreicher-backend-euhpd8d2abfwhhe3.westus-01.azurewebsites.net/submit/',
+                    'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
                     formData,
                     {
                         headers: { 'Content-Type': 'application/json' }
