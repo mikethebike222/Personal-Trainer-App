@@ -2,6 +2,18 @@ import os
 from .settings import *
 from .settings import BASE_DIR
 
+
+ALLOWED_HOSTS = [
+    'coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net'
+]
+CORS_ALLOWED_ORIGINS = [
+    "https://gentle-cliff-05572e80f.6.azurestaticapps.net" 
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://gentle-cliff-05572e80f.6.azurestaticapps.net"
+]
+
+
 DEBUG = False
 SECRET_KEY = os.environ['SECRET_KEY']
 
