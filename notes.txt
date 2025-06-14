@@ -18,11 +18,11 @@ Left to be implemented -
 
 Tasks - 
 
-  - Responsive Mobile design (EST 30 min)
+  - Responsive Mobile design (EST 30 min) 
       - Fix wishy washy thing on the phone
-  - Make it so there is a green loading icon after submitting until actually submitted (EST 45 min)
-  - Make it so that there is easier email validation, like red thing above that says required x@x.x (EST 30min)
-  - Success or errors thing for submitting (EST 30 min)
+  - Make it so there is a green loading icon after submitting until actually submitted (EST 45 min) x
+  - Make it so that there is easier email validation, like red thing above that says required x@x.x (EST 30min) x
+  - Success or errors thing for submitting (EST 30 min) x
   - Comments everywhere (EST 1.5 hours) 
   
   - Domain name (Est ? 15-30)
