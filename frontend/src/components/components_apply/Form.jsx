@@ -46,7 +46,7 @@ const Form = () => {
         if (Object.keys(newErrors).length === 0) {
             setLoading(true);
             setSubmitStatus('');
-            
+            const postData = async () => {
             try {
                 const response = await axios.post(
                     'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
@@ -79,6 +79,7 @@ const Form = () => {
             } finally {
                 setLoading(false);
             }
+        }
             postData()
         } else {
             setSubmitStatus('error');
