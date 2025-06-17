@@ -63,8 +63,9 @@
       margin-right: auto;
     }
     .inspireText {
-      max-width: 85%;
+      max-width: 70%;
       text-align: center;
+      padding-left: 5%
     }
     .inspireHead {
       text-align: center;
