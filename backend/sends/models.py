@@ -12,7 +12,7 @@ class Member(models.Model):
     weight = models.CharField(max_length=100, default="None")
     commit = models.CharField(max_length=3, default='Yes')
     goal = models.CharField(max_length=100, default="None")
-    stuck = models.CharField(max_length=250, default="None", blank=True, null=True)
+    stuck = models.CharField(max_length=250, default="", blank=True, null=True)
     start = models.CharField(max_length=25, default="Immediately")
     signature = models.CharField(max_length=150, default="None")
     signup = models.BooleanField(default = False)
