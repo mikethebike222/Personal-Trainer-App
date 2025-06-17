@@ -5,7 +5,6 @@ import axios from 'axios'
 const Form = () => {
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
-
     const [formData, setFormData] = useState({
         fname: '',
         lname: '',
@@ -44,6 +43,12 @@ const Form = () => {
         if (Object.keys(newErrors).length === 0) {
             setLoading(true);
             setSubmitStatus('');
+            if (formData['stuck'] === '') {
+                setFormData({
+                ...formData,
+                [stuck]: 'none',
+                });
+            }
             const postData = async () => {
             try {
                 const response = await axios.post(
