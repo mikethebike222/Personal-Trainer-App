@@ -46,7 +46,6 @@ const Form = () => {
             setSubmitStatus('');
             const postData = async () => {
             try {
-                const payload = { ...formData, stuck: formData.stuck || 'N/A' };
                 const response = await axios.post(
                     'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
                     formData,
