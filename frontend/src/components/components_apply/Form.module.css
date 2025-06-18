@@ -1,7 +1,10 @@
+/* Layout for the form element */
+
 form{
     padding-bottom: 10%;
 }
 
+/* Utility flex row used throughout the form */
 .formRow {
     display: flex;
     gap: 1.5rem;
@@ -15,6 +18,7 @@ form{
     min-width: 250px;
 }
 
+/* Container that wraps the entire form */
 .formContainer{
     background-color: white;
     border-radius: 15px;
@@ -78,6 +82,7 @@ textarea{
     border-radius: 5px;
 }
 
+/* Submit button styling */
 .formButton{
     padding: 10px 15px;
     border-radius: 6px;

@@ -1,3 +1,5 @@
+// SellingPoint explains the coach's background and displays an image.
+
 import inspirePic from '../../images/inspire.jpg';
 import styles from './SellingPoint.module.css'
 

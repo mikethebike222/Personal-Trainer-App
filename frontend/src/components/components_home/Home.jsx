@@ -1,3 +1,5 @@
+// Home represents the main sections of the landing page.
+
 import Header from '../Header'
 import Discipline  from './Discipline'
 import ApplyImage from './ApplyImage'

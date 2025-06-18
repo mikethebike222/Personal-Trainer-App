@@ -1,3 +1,5 @@
+/* Container styling for the list of program benefits */
+
 .offerContainer{
     display: flex;
     align-items: center;
@@ -8,6 +10,7 @@
     padding-top: 5%;
 }
 
+/* Large header above the benefits */
 .offerH2{
     padding-left: 7%;
     font-size: clamp(37px, 8vw, 75px);
@@ -16,12 +19,14 @@
     
 }
 
+/* Unordered list that contains each benefit item */
 .offerUl{
     padding-left: 5%;
     font-size: clamp(17px, 3vw, 25px);
     line-height: 1.5;
 }
 
+/* Responsive design */
 @media (max-width: 600px) {
     .offerContainer {
         flex-direction: column;

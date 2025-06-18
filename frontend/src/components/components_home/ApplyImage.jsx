@@ -1,3 +1,4 @@
+// ApplyImage displays the gym interior image with a "Apply Now" button that routes the user to the application page.
 import gymInterior from '../../images/gym-interior.jpg';
 import styles from './ApplyImage.module.css'
 import { useNavigate } from 'react-router-dom'
