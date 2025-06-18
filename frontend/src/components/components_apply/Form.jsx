@@ -43,17 +43,15 @@ const Form = () => {
         if (Object.keys(newErrors).length === 0) {
             setLoading(true);
             setSubmitStatus('');
-            if (formData['stuck'] === '') {
-                setFormData({
+            const dataToSend = {
                 ...formData,
-                [stuck]: 'none',
-                });
+                stuck: formData.stuck === '' ? 'none' : formData.stuck
             }
             const postData = async () => {
             try {
                 const response = await axios.post(
                     'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
-                    formData,
+                    dataToSend,
                     {
                         headers: { 'Content-Type': 'application/json' }
                     }
