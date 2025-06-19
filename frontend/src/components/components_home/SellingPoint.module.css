@@ -55,17 +55,18 @@
 
   @media (max-width: 600px) {
     .inspireContainer {
-      align-items: flex-start;
+      align-items: center;
       gap: 1.5rem;
     }
     .inspireImg {
-      max-width: 70%;
+      max-width: 60%;
+      height: auto;
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
     .inspireText {
-      max-width: 70%;
+      max-width: 80%;
       text-align: center;
       padding-left: 5%
     }

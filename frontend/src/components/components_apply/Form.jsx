@@ -49,18 +49,16 @@ const Form = () => {
             setLoading(true);
             setSubmitStatus('');
             // Ensure optional textbox is never undefined
-            if (formData['stuck'] === '') {
-                setFormData({
+            const dataToSend = {
                 ...formData,
-                [stuck]: 'none',
-                });
+                stuck: formData.stuck === '' ? 'none' : formData.stuck
             }
             const postData = async () => {
             try {
                 // Send form data to backend API
                 const response = await axios.post(
                     'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
-                    formData,
+                    dataToSend,
                     {
                         headers: { 'Content-Type': 'application/json' }
                     }

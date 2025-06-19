@@ -1,7 +1,7 @@
 /* Footer component styling */
 .footHeader {
     color: black;
-    font-size: clamp(23px, 4vw, 35px);
+    font-size: clamp(15px, 4vw, 35px);
     padding-top: 1%;
     text-align: center;
     text-transform: uppercase;
@@ -23,7 +23,7 @@
     padding-bottom: .6%;
     margin: 0 auto;        
     text-align: center;
-    font-size: clamp(10px, 2vw, 18px);
+    font-size: clamp(11px, 2vw, 18px);
 }
 
 @media (max-width: 900px) {
