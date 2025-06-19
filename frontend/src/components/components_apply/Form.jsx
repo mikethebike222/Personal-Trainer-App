@@ -1,10 +1,15 @@
+// Form page displays a form for the user to submit
+
 import React, { useState } from 'react'
 import styles from './Form.module.css'
 import axios from 'axios'
 
+
+// Form component collects user information and submits it to the backend
 const Form = () => {
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
+    // Initial values for the form fields
     const [formData, setFormData] = useState({
         fname: '',
         lname: '',
@@ -21,12 +26,13 @@ const Form = () => {
         signup: false,
         date: formattedDate,
     })
-
+    // Object used to track validation errors
     const [errors, setErrors] = useState({})
+    // Indicates if the form is currently submitting
     const [loading, setLoading] = useState(false)
     const [submitStatus, setSubmitStatus] = useState('')
 
-
+    // Updates the local state whenever an input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -34,21 +40,22 @@ const Form = () => {
             [name]: value,
         });
     }
-
+    // Handles the submit button click
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newErrors = validateForm(formData);
         setErrors(newErrors);
-
         if (Object.keys(newErrors).length === 0) {
             setLoading(true);
             setSubmitStatus('');
+            // Ensure optional textbox is never undefined
             const dataToSend = {
                 ...formData,
                 stuck: formData.stuck === '' ? 'none' : formData.stuck
             }
             const postData = async () => {
             try {
+                // Send form data to backend API
                 const response = await axios.post(
                     'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
                     dataToSend,
@@ -57,6 +64,7 @@ const Form = () => {
                     }
                 )
                 console.log(response.data)
+                // Reset form back to initial state
                 setFormData({
                     fname: '',
                     lname: '',
@@ -83,14 +91,15 @@ const Form = () => {
         }
             postData()
         } else {
+            // Form was invalid — display errors
             setSubmitStatus('error');
             console.log('Form submission failed due to validation errors.')
         }
     }
-
+    // Basic validation checks for required fields
     const validateForm = (data) => {
         const errors = {}
-
+        // Validate each required field
         if (data.fname.trim() === '') {
             errors.fname = 'First Name is required'
         } 
@@ -137,6 +146,7 @@ const Form = () => {
         const expectedSignature = `${formatName(data.fname)} ${formatName(data.lname)}`
 
         if (data.signature !== expectedSignature) {
+            // Check the typed signature matches first and last name
             errors.signature = "Invalid signature, should be your legal first and last name"
           }
         
@@ -147,9 +157,11 @@ const Form = () => {
 
 
     return(
+        // Form layout and fields using CSS modules for styling
         <div className = {styles.formContainer}>
             <h1 >LET'S DO THIS.</h1>
             <form onSubmit={handleSubmit}>
+                {/* FIRST + LAST NAME */}
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='firstname'>First Name (required)</label>
@@ -170,7 +182,7 @@ const Form = () => {
                 <input type='text' value={formData.lname} onChange={handleChange} name='lname'/>
                 </div>
                 </div>
-
+                {/* EMAIL + PHONE # */}
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='email'>Email (required)</label>
@@ -192,7 +204,7 @@ const Form = () => {
                 <input type='text' value={formData.phone} onChange={handleChange} name='phone'/>
                 </div>
                 </div>
-
+                {/* AGE + HEIGHT */}
                 <div className= {styles.formRow}>              
                 <div className= {styles.formGroup}>
                 <label htmlFor='age'>Age (required)</label>
@@ -214,7 +226,7 @@ const Form = () => {
                 <input type='text' value={formData.height} onChange={handleChange} name='height'/>
                 </div>
                 </div>
-
+                {/* WEIGHT + COMMITMENT */}
                 <div className= {styles.formRow}>
                 <div className= {styles.formGroup}>
                 <label htmlFor='weight'>Weight in pounds (required)</label>
@@ -234,6 +246,7 @@ const Form = () => {
                 </select>
                 </div>
                 </div>
+                {/* GOAL WEIGHT */}
                 <div className= {styles.formGroup}>
                 <label htmlFor='goalWeight'>Do you have a goal weight in mind, if so what is it? (required)</label>
                 {errors.goal && (
@@ -243,7 +256,7 @@ const Form = () => {
                 )}
                 <input type='text' value={formData.goal} onChange={handleChange} name='goal'/>
                 </div>
-
+                {/* STUCK FIELD (OPTIONAL) */}
                 <label htmlFor='stuck'>Where are you getting stuck right now on your own, and why are you looking to be coached?</label>
                 <textarea name='stuck' id='stuck' cols='30' rows = '10' type='text' value={formData.stuck} onChange={handleChange}></textarea>
                 
@@ -255,9 +268,10 @@ const Form = () => {
                     <option value='oneMonth'>1 Month +</option>
                 </select>
                 <h3> Book a Free Interest Call (required)</h3>
+                {/* CALENDAR BOOKING IFRAME (Embedded Google Schedule) */}
                 <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3_yT57KQimlOC-1mpm93G8rzeYEHMA0d4196v3jRlYs8s4wmEi6GBsR5toJQGhujFnQJ8sXCiw?gv=true"  width="100%" height="600"></iframe>
 
-
+                {/* LEGAL POLICY SECTION */}
                 <h4>Jacob Oestreicher Coaching – DISCLAIMER & CANCELLATION POLICY</h4>
                 <p>Cancellation Policy:
 Jacob Oestreicher Coaching enforces a strict no-refund policy. Once a client has committed to a coaching program, no refunds will be issued under any circumstances.
@@ -271,6 +285,7 @@ The guidance provided by Jacob Oestreicher Coaching is for educational purposes 
 
 By signing here with Jacob Oestreicher Coaching, clients confirm they have read, understood, and agreed to the terms outlined in this policy.</p>
 
+                {/* SIGNATURE FIELD */}
                 <label htmlFor='signature'>Signature (required)</label>
                 {errors.signature && (
                     <div className={styles.errorBox}>
@@ -278,6 +293,7 @@ By signing here with Jacob Oestreicher Coaching, clients confirm they have read,
                     </div>
                 )}
                 <input type='text' name='signature' value={formData.signature} onChange={handleChange}/>
+                {/* CHECKBOX FOR SMS/EMAIL AGREEMENT */}
                 <div className={styles.checkboxRow}>
                     <label className = {styles.checkboxlabel} htmlFor='signup'>
                         <input
@@ -292,6 +308,7 @@ By signing here with Jacob Oestreicher Coaching, clients confirm they have read,
                     I agree to receive SMS and email updates related to Jacob Oestreicher Coaching.
                     </label>
                 </div>
+                {/* SUBMIT BUTTON AND CONDITIONAL STATUS MESSAGES */}
                 <button className = {styles.formButton} type='submit' disabled={loading}>
                     Submit
                 </button>

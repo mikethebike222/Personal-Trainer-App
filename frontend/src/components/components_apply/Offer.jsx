@@ -1,5 +1,5 @@
 import styles from './Offer.module.css'
-
+// Offer component lists the perks a client receives
 
 const Offer = () => {
     return (

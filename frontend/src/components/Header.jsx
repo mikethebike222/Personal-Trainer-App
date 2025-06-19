@@ -1,4 +1,4 @@
-
+// Header displays the site's name across all pages.
 const Header = () => {
     const headerStyle = {
         color: 'lightgray',

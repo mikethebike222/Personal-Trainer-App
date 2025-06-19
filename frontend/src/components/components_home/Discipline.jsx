@@ -1,3 +1,4 @@
+// Discipline displays a bold motivational statement at the top of the page.
 
 const Discipline = () => {
 

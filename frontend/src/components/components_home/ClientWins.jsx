@@ -1,3 +1,5 @@
+// ClientWins cycles through client images using previous and next buttons.
+
 import React, { useState } from 'react'
 import styles from './Client.module.css'
 

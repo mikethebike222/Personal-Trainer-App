@@ -1,3 +1,4 @@
+// Small decorative SVG used to separate sections on the page
 const Swoosh = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

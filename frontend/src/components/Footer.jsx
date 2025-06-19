@@ -1,3 +1,4 @@
+// Footer contains contact details.
 import styles from './Footer.module.css'
 const Footer = () => {
     return (

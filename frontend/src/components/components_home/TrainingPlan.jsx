@@ -1,3 +1,5 @@
+// TrainingPlan lists the benefits included with coaching.
+
 import styles from './TrainingPlan.module.css'
 
 const TrainingPlan = () => {
