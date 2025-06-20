@@ -26,6 +26,8 @@ def receive_data(request):
 
                 # Save the form
                 member = form.save()
+
+                # Function for calling the azure function so we can use threads
                 def call_function():
                     try:
                         AZURE_FUNC_KEY = os.environ.get("AZURE_FUNC_KEY")
@@ -33,6 +35,7 @@ def receive_data(request):
                     except Exception as e:
                         print("Azure Function call failed:", e)
 
+                # Start a thread on that function
                 threading.Thread(target=call_function).start()
 
                 return JsonResponse({"status": "success"})
@@ -55,6 +58,7 @@ def receive_data(request):
     else:
         # Not a post so 405 status
         return HttpResponse("Only Supports Post Requests", status=405)
-    
+
+# Return a response to indicate the backend is running
 def home(request):
     return HttpResponse("Backend is running")
