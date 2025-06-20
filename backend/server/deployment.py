@@ -2,7 +2,7 @@ import os
 from .settings import *
 from .settings import BASE_DIR
 
-
+# Allow CORS for the frontend and make the backend api an allowed host
 ALLOWED_HOSTS = [
     'coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net'
 ]
@@ -13,13 +13,14 @@ CSRF_TRUSTED_ORIGINS = [
     "https://gentle-cliff-05572e80f.6.azurestaticapps.net"
 ]
 
-
+# Debug = false for production
 DEBUG = False
+
+# Get secret key from env
 SECRET_KEY = os.environ['SECRET_KEY']
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
-
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -42,6 +43,7 @@ STORAGES = {
 CONNECTION = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
 CONNECTION_STR = {pair.split('=')[0]:pair.split('=')[1] for pair in CONNECTION.split(' ')}
 
+# Connect using env variables
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

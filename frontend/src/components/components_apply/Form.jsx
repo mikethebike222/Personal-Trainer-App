@@ -7,9 +7,11 @@ import axios from 'axios'
 
 // Form component collects user information and submits it to the backend
 const Form = () => {
-    const today = new Date();
-    const formattedDate = today.toISOString().split('T')[0];
-    // Initial values for the form fields
+
+    const today = new Date()
+    const formattedDate = today.toISOString().split('T')[0]
+
+    // Initial values for the form fields using useState hook
     const [formData, setFormData] = useState({
         fname: '',
         lname: '',
@@ -26,8 +28,10 @@ const Form = () => {
         signup: false,
         date: formattedDate,
     })
-    // Object used to track validation errors
+
+    // useState hook used to track validation errors
     const [errors, setErrors] = useState({})
+    
     // Indicates if the form is currently submitting
     const [loading, setLoading] = useState(false)
     const [submitStatus, setSubmitStatus] = useState('')
@@ -38,23 +42,33 @@ const Form = () => {
         setFormData({
             ...formData,
             [name]: value,
-        });
+        })
     }
-    // Handles the submit button click
+
+    // Function handles the submit button click functionality
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const newErrors = validateForm(formData);
-        setErrors(newErrors);
+
+        e.preventDefault()
+        const newErrors = validateForm(formData)
+
+        // Check for errors 
+        setErrors(newErrors)
+        
+        // If there are no errors we want to post the form submition 
         if (Object.keys(newErrors).length === 0) {
             setLoading(true);
             setSubmitStatus('');
-            // Ensure optional textbox is never undefined
+
+            // Ensure optional textbox is never undefined to avoid bugs
             const dataToSend = {
                 ...formData,
                 stuck: formData.stuck === '' ? 'none' : formData.stuck
             }
+
+            // Function to post data to backend API and catch any potential errors
             const postData = async () => {
             try {
+
                 // Send form data to backend API
                 const response = await axios.post(
                     'https://coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net/submit/',
@@ -64,6 +78,7 @@ const Form = () => {
                     }
                 )
                 console.log(response.data)
+
                 // Reset form back to initial state
                 setFormData({
                     fname: '',
@@ -84,21 +99,27 @@ const Form = () => {
                 setSubmitStatus('success');
             } catch (error) {
                 console.error('Error posting data:', error)
-                setSubmitStatus('error');
+                setSubmitStatus('error')
             } finally {
-                setLoading(false);
+                // Set loading back to false
+                setLoading(false)
             }
         }
-            postData()
+        // Call the function
+        postData()
+
         } else {
             // Form was invalid — display errors
             setSubmitStatus('error');
             console.log('Form submission failed due to validation errors.')
         }
     }
+
     // Basic validation checks for required fields
     const validateForm = (data) => {
+
         const errors = {}
+
         // Validate each required field
         if (data.fname.trim() === '') {
             errors.fname = 'First Name is required'
@@ -146,6 +167,7 @@ const Form = () => {
         const expectedSignature = `${formatName(data.fname)} ${formatName(data.lname)}`
 
         if (data.signature !== expectedSignature) {
+            
             // Check the typed signature matches first and last name
             errors.signature = "Invalid signature, should be your legal first and last name"
           }

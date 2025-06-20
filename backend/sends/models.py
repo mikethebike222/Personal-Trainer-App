@@ -2,7 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class Member(models.Model):
+class Member(models.Model): 
+
+    # All the fields for the DB
     fname = models.CharField(max_length=50, default="None")
     lname = models.CharField(max_length=100, default="None")
     email = models.EmailField(max_length=100)
