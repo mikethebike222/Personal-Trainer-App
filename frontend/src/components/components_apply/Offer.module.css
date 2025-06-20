@@ -45,4 +45,7 @@
         content: "";
         display: inline;
     }  
+    .offerH2{
+        padding-left: 0%;
+    }
 }
