@@ -4,7 +4,7 @@ Building a web application for Jacob Oestreicher's coaching business.
 
 **TikTok**: [@jacoboestreichercoaching](https://www.tiktok.com/@jacoboestreichercoaching)
 
-Web app link can be found here: https://gentle-cliff-05572e80f.6.azurestaticapps.net/
+Web app link can be found here(): https://michaelsica.org/
 
 
 ## Project Overview
@@ -54,14 +54,10 @@ Full-stack web application with:
 2. The backend automatically runs database migrations on startup.
 
 ### Access Points
-- **Frontend**: http://localhost:3000 (or your Vite dev server port)
+- **Frontend**: http://localhost:3000
 - **Backend API**: http://localhost:8000
 
 ### API Endpoints
-- `POST /sends/` - Submit user form data
-- More endpoints may be added as if needed
+- `POST /submit/` - Submit user form data
+- More endpoints may be added in future as needed
 
-## Development Status
-**In Active Testing**
-
-Currently in process of testing deployment. 
