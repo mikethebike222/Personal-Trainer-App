@@ -10,7 +10,7 @@ const SellingPoint = () => {
             <div className={styles.inspireText}>
             <h2 className = {styles.inspireHead}> If you’re thinking… another online coach… what does he know? </h2>
             <p className = {styles.inspireSub}>
-            I’m a NASM-certified personal trainer with over three and a half years of intense training, dieting, and consistency.
+            <b>I’m a NASM-certified personal trainer </b>with over three and a half years of intense training, dieting, and consistency.
              Before I started coaching online, I worked as an in-person trainer. 
              Once I realized I could reach and help more people through online coaching, I made the transition.
               Since then, I’ve helped over 30 clients achieve their fitness goals.
