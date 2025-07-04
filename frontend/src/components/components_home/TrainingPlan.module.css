@@ -100,7 +100,6 @@
     
     .trainingPlanHead {
         font-size: clamp(24px, 5vw, 36px);
-        padding: 0 1rem;
     }
     
     .trainingPlanText {

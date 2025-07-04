@@ -115,6 +115,39 @@
   }
   
   .carouselContainer {
-      padding: 0 60px;
+      padding: 0 60px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .clientContainer {
+      padding: 3rem 0;
+  }
+  
+  .clientText {
+      font-size: clamp(24px, 6vw, 36px);
+      margin-bottom: 1.5rem;
+  }
+  
+  .carouselContainer {
+      padding: 0 20px;
+  }
+  
+  .carouselImage {
+      max-width: 100%;
+      width: 100%;
+  }
+  
+  .carouselButton {
+      width: 36px;
+      height: 36px;
+  }
+  
+  .carouselButton.prev {
+      left: -5px;
+  }
+  
+  .carouselButton.next {
+      right: -5px;
   }
 }
