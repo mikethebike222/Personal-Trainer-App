@@ -1,5 +1,4 @@
 /* Styles for the apply image section and button */
-
 .image {
     display: block;
     margin: 0 auto;
@@ -27,6 +26,18 @@
   font-weight: bold;
   cursor: pointer;
   z-index: 1;
+}
+
+.buttonstyle:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: #1a1a1a;
+  border-color: #f0f0f0;
+}
+
+.buttonstyle:active {
+  transform: translateX(-50%) translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 1400px) {

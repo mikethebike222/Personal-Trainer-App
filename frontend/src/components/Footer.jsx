@@ -1,14 +1,43 @@
-// Footer contains contact details.
+// Footer.jsx - Simple footer with CSS module
 import styles from './Footer.module.css'
+
 const Footer = () => {
     return (
-        <div>
-            <h2 className = {styles.footHeader}> JACOB OESTREICHER COACHING </h2>
-            <h4 className = {styles.contact}> Contact Info </h4>
-            <p className = {styles.textFormat}> Email: JacobOestreicher@gmail.com</p>
-            <p className = {styles.textFormat}> Number: (914)-255-2133</p>
-
-        </div>
+        <footer className={styles.footer}>
+            <h2 className={styles.footerTitle}>JACOB OESTREICHER COACHING</h2>
+            
+            <div className={styles.contactInfo}>
+                <a href="mailto:JacobOestreicher@gmail.com" className={styles.contactLink}>
+                    JacobOestreicher@gmail.com
+                </a>
+            </div>
+            
+            <div className={styles.contactInfo}>
+                <a href="tel:914-255-2133" className={styles.contactLink}>
+                    (914) 255-2133
+                </a>
+            </div>
+            
+            <div className={styles.socialLinks}>
+                <a 
+                    href="https://www.instagram.com/jacoboestreichercoaching/" 
+                    className={styles.socialLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+                <span className={styles.divider}>|</span>
+                <a 
+                    href="https://www.tiktok.com/@jacoboestreichercoaching" 
+                    className={styles.socialLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TikTok
+                </a>
+            </div>
+        </footer>
     )
 }
 
