@@ -1,48 +1,120 @@
-/* Styles for the list of training plan benefits */
-
 .trainingPlanContainer {
-    background-color: #eeeee4;
-    padding-bottom: 1%;
+    background-color: #ffffff;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle background gradient */
+.trainingPlanContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20%;
+    right: -20%;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.trainingPlanContainer > * {
+    position: relative;
+    z-index: 1;
 }
 
 .trainingPlanHead {
-    color: black;
-    font-size: clamp(23px, 4vw, 35px);
-    padding-top: 3%;
+    color: #1a1a1a;
+    font-size: clamp(32px, 5vw, 48px);
+    padding-top: 0;
     text-align: center;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 3rem 0;
     width: 100%;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    font-family: 'Inter', -apple-system, sans-serif;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
-.trainingPlanText{
-    max-width: 650px;
+/* Add accent line under heading */
+.trainingPlanHead::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0066FF 0%, #0052cc 100%);
+    border-radius: 2px;
+}
+
+.trainingPlanText {
+    max-width: 800px;
     margin: 0 auto;        
-    padding: 0 1rem;        
+    padding: 0 2rem;        
     text-align: left;
-    font-size: clamp(15px, 3vw, 25px);
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.trainingPlanText ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trainingPlanText li {
+    padding: 0.75rem 0;
+    position: relative;
+    padding-left: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+}
+
+.trainingPlanText li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #0066FF;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.trainingPlanText p {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    text-align: center;
+    font-style: italic;
 }
 
 @media (max-width: 900px) {
     .trainingPlanContainer {
-        padding: 7%;
+        padding: 4rem 1rem;
     }
     
     .trainingPlanHead {
-        color: black;
-        font-size: clamp(18px, 4vw, 35px);
-        padding-top: 3%;
-        text-align: center;
-        text-transform: uppercase;
-        margin: 0;
-        width: 100%;
+        font-size: clamp(24px, 5vw, 36px);
+        padding: 0 1rem;
     }
     
-    .trainingPlanText{
-        max-width: 650px;
-        margin: 0 auto;        
-        padding: 0 1rem;        
-        text-align: left;
-        font-size: clamp(14px, 3vw, 25px);
+    .trainingPlanText {
+        max-width: 90%;
+        font-size: clamp(15px, 2.5vw, 18px);
     }
-  }
+}
+
+@media (max-width: 600px) {
+    .trainingPlanContainer {
+        padding: 3rem 1rem;
+    }
+    
+    .trainingPlanText li {
+        padding-left: 1.5rem;
+    }
+}

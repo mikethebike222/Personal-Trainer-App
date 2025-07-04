@@ -1,33 +1,68 @@
-/* Footer component styling */
-.footHeader {
-    color: black;
-    font-size: clamp(15px, 4vw, 35px);
-    padding-top: 1%;
+.footer {
+    background: black;
+    color: lightgray;
+    padding: 2% 0;
+    width: 100%;
+    margin-top: 0;
+}
+
+.footerTitle {
+    font-size: clamp(20px, 4vw, 28px);
     text-align: center;
     text-transform: uppercase;
-    margin: 0;
-    width: 100%;
+    margin: 0 0 1.5rem 0;
+    font-family: 'Impact', sans-serif;
+    letter-spacing: 0.5px;
+    color: lightgray;
 }
 
-.contact {
-    max-width: 650px;
-    margin: 0 auto;        
+.contactInfo {
+    font-size: clamp(14px, 2.5vw, 18px);
     text-align: center;
-    padding-top: 1%;
-    padding-bottom: .6%;
-    font-size: clamp(15px, 3vw, 25px);
+    margin: 0.5rem 0;
+    font-family: -apple-system, sans-serif;
 }
 
-.textFormat {
-    padding-top: .5%;
-    padding-bottom: .6%;
-    margin: 0 auto;        
-    text-align: center;
-    font-size: clamp(11px, 2vw, 18px);
+.contactLink {
+    color: lightgray;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-@media (max-width: 900px) {
-    .textFormat{
-        padding-bottom: 2%;
+.contactLink:hover {
+    color: white;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.socialLink {
+    color: lightgray;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: -apple-system, sans-serif;
+}
+
+.socialLink:hover {
+    color: white;
+}
+
+.divider {
+    color: gray;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 3% 1rem;
+    }
+    
+    .socialLinks {
+        gap: 1rem;
     }
 }

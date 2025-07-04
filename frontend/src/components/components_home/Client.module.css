@@ -1,4 +1,4 @@
-clientContainer {
+.clientContainer {
   padding: 5rem 0;
   background: white;
 }
@@ -43,7 +43,7 @@ clientContainer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgb(209, 208, 208);
+  background: white;
   border: none;
   width: 48px;
   height: 48px;
@@ -112,5 +112,9 @@ clientContainer {
   
   .carouselButton.next {
       right: 10px;
+  }
+  
+  .carouselContainer {
+      padding: 0 60px;
   }
 }
