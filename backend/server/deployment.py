@@ -7,10 +7,12 @@ ALLOWED_HOSTS = [
     'coachingbackend-ewf9ehbce4aee4cp.westus-01.azurewebsites.net'
 ]
 CORS_ALLOWED_ORIGINS = [
-    "https://gentle-cliff-05572e80f.6.azurestaticapps.net" 
+    "https://gentle-cliff-05572e80f.6.azurestaticapps.net",
+    "https://michaelsica.org"
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://gentle-cliff-05572e80f.6.azurestaticapps.net"
+    "https://gentle-cliff-05572e80f.6.azurestaticapps.net",
+    "https://michaelsica.org"
 ]
 
 # Debug = false for production
