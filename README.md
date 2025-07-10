@@ -4,8 +4,7 @@ Building a web application for Jacob Oestreicher's coaching business.
 
 **TikTok**: [@jacoboestreichercoaching](https://www.tiktok.com/@jacoboestreichercoaching)
 
-Web app link can be found here(): https://michaelsica.org/
-
+Web app link can be found here(): https://gentle-cliff-05572e80f.6.azurestaticapps.net/
 
 ## Project Overview
 
