@@ -131,7 +131,7 @@ USE_TZ = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173", # Whatever port you have it set to, mine is 5173
     "http://127.0.0.1:5173",
-    "https://gentle-cliff-05572e80f.6.azurestaticapps.net" 
+    "https://gentle-cliff-05572e80f.6.azurestaticapps.net",
     "https://michaelsica.org"
 ]
 

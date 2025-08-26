@@ -166,3 +166,128 @@ button:hover{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* Policy section styling */
+.policySection {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.policySection h5 {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+}
+
+.policySection h5:first-child {
+    margin-top: 0;
+}
+
+.policySection p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.policySection strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.agreementText {
+    background-color: #fff;
+    border-left: 4px solid #d32f2f;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.policySection:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Section titles */
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Price note styling */
+.priceNote {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Policy section styling */
+.policySection {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.policySection h5 {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+}
+
+.policySection h5:first-child {
+    margin-top: 0;
+}
+
+.policySection p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.policySection strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.agreementText {
+    background-color: #fff;
+    border-left: 4px solid #d32f2f;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+/* Optional: Add a subtle animation when hovering over the policy section */
+.policySection:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
