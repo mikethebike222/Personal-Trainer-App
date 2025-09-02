@@ -9,7 +9,7 @@ class Member(models.Model):
     lname = models.CharField(max_length=100, default="None")
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=50, default="None")
-    age = models.IntegerField(default=20)
+    age = models.CharField(max_length=50, default="None")
     height = models.CharField(max_length=100, default="None")
     weight = models.CharField(max_length=100, default="None")
     commit = models.CharField(max_length=30, default='Yes')
